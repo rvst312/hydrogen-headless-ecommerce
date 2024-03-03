@@ -1,33 +1,37 @@
-import {defer} from '@shopify/remix-oxygen';
-import {Await, useLoaderData, Link} from '@remix-run/react';
-import {Suspense} from 'react';
-import {Image, Money} from '@shopify/hydrogen';
+import { defer } from '@shopify/remix-oxygen';
+import React, { useState } from 'react';
+import { Await, useLoaderData, Link } from '@remix-run/react';
+import { Suspense } from 'react';
+import { Image, Money } from '@shopify/hydrogen';
+import { HeroHome } from '../components/HeroHome';
 
 /**
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: 'Hydrogen | Home'}];
+  return [{ title: 'Hydrogen | Home' }];
 };
 
 /**
  * @param {LoaderFunctionArgs}
  */
-export async function loader({context}) {
-  const {storefront} = context;
-  const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
+export async function loader({ context }) {
+  const { storefront } = context;
+  const { collections } = await storefront.query(FEATURED_COLLECTION_QUERY);
   const featuredCollection = collections.nodes[0];
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
 
-  return defer({featuredCollection, recommendedProducts});
+  return defer({ featuredCollection, recommendedProducts });
 }
 
 export default function Homepage() {
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
+
   return (
     <div className="home">
-      <FeaturedCollection collection={data.featuredCollection} />
+      {/*<FeaturedCollection collection={data.featuredCollection} />*/}
+      <HeroHome />
       <RecommendedProducts products={data.recommendedProducts} />
     </div>
   );
@@ -38,7 +42,7 @@ export default function Homepage() {
  *   collection: FeaturedCollectionFragment;
  * }}
  */
-function FeaturedCollection({collection}) {
+/*function FeaturedCollection({collection}) {
   if (!collection) return null;
   const image = collection?.image;
   return (
@@ -54,20 +58,22 @@ function FeaturedCollection({collection}) {
       <h1>{collection.title}</h1>
     </Link>
   );
-}
+}*/
 
 /**
  * @param {{
  *   products: Promise<RecommendedProductsQuery>;
  * }}
  */
-function RecommendedProducts({products}) {
+function RecommendedProducts({ products }) {
+
+
   return (
     <div className="recommended-products">
       <h2>Recommended Products</h2>
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
-          {({products}) => (
+          {({ products }) => (
             <div className="recommended-products-grid">
               {products.nodes.map((product) => (
                 <Link
@@ -91,7 +97,7 @@ function RecommendedProducts({products}) {
         </Await>
       </Suspense>
       <br />
-    </div>
+    </div >
   );
 }
 
