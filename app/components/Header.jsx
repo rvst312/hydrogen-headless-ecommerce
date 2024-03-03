@@ -2,6 +2,8 @@ import { Await, NavLink } from '@remix-run/react';
 import { Suspense } from 'react';
 import { useRootLoaderData } from '~/root';
 import { MenuIcon } from './icons/menuBurguer';
+import { SearchIcon } from './icons/search';
+import { CartIcon } from './icons/cart'
 
 /**
  * @param {HeaderProps}
@@ -53,7 +55,7 @@ export function HeaderMenu({ menu, primaryDomainUrl, viewport }) {
           style={activeLinkStyle}
           to="/"
         >
-      </NavLink>
+        </NavLink>
       )}
       {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
         if (!item.url) return null;
@@ -116,14 +118,23 @@ function HeaderMenuMobileToggle() {
 }
 
 function SearchToggle() {
-  return <a href="#search-aside">Search</a>;
+  return (
+    <a href="#search-aside">
+      <SearchIcon />
+    </a>
+  );
 }
 
 /**
  * @param {{count: number}}
  */
 function CartBadge({ count }) {
-  return <a href="#cart-aside">Cart {count}</a>;
+  return (
+    <a href="#cart-aside">
+      <CartIcon /> 
+      <span style={{ fontSize: '11px' }}>{count}</span>
+    </a>
+  );
 }
 
 /**
