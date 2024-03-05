@@ -4,6 +4,7 @@ import { Await, useLoaderData, Link } from '@remix-run/react';
 import { Suspense } from 'react';
 import { Image, Money } from '@shopify/hydrogen';
 import { HeroHome } from '../components/HeroHome';
+import { BentoGrid } from '../components/bentoGrid';
 
 /**
  * @type {MetaFunction}
@@ -32,6 +33,7 @@ export default function Homepage() {
     <div className="home">
       {/*<FeaturedCollection collection={data.featuredCollection} />*/}
       <HeroHome />
+      <BentoGrid />
       <RecommendedProducts products={data.recommendedProducts} />
     </div>
   );
