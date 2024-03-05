@@ -14,7 +14,7 @@ export function Header({ header, isLoggedIn, cart }) {
     <header className="header">
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
         <span>
-          JUICYCBD
+          <img className='logo' src="https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Juicy-cbd-logotipo-version-negro.png?v=1709477595" alt="JUICYCBD" />
         </span>
       </NavLink>
       <HeaderMenu
