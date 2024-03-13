@@ -10,19 +10,19 @@ import { BentoGrid } from '../components/bentoGrid';
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{ title: 'Hydrogen | Home' }];
+  return [{ title: 'JUICYCBD | HOME' }];
 };
 
 /**
  * @param {LoaderFunctionArgs}
  */
+
+// Pedimos los datos necesarios
 export async function loader({ context }) {
   const { storefront } = context;
-  const { collections } = await storefront.query(FEATURED_COLLECTION_QUERY);
-  const featuredCollection = collections.nodes[0];
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
 
-  return defer({ featuredCollection, recommendedProducts });
+  return defer({ recommendedProducts });
 }
 
 export default function Homepage() {
@@ -31,7 +31,6 @@ export default function Homepage() {
 
   return (
     <div className="home">
-      {/*<FeaturedCollection collection={data.featuredCollection} />*/}
       <HeroHome />
       <BentoGrid />
       <RecommendedProducts products={data.recommendedProducts} />
@@ -41,39 +40,15 @@ export default function Homepage() {
 
 /**
  * @param {{
- *   collection: FeaturedCollectionFragment;
- * }}
- */
-/*function FeaturedCollection({collection}) {
-  if (!collection) return null;
-  const image = collection?.image;
-  return (
-    <Link
-      className="featured-collection"
-      to={`/collections/${collection.handle}`}
-    >
-      {image && (
-        <div className="featured-collection-image">
-          <Image data={image} sizes="100vw" />
-        </div>
-      )}
-      <h1>{collection.title}</h1>
-    </Link>
-  );
-}*/
-
-/**
- * @param {{
  *   products: Promise<RecommendedProductsQuery>;
  * }}
  */
 function RecommendedProducts({ products }) {
 
-
   return (
     <div className="recommended-products">
-      <h2>Recommended Products</h2>
-      <Suspense fallback={<div>Loading...</div>}>
+      <h2>Nuestras flores</h2>
+      <Suspense fallback={<div>Cargando...</div>}>
         <Await resolve={products}>
           {({ products }) => (
             <div className="recommended-products-grid">
@@ -149,7 +124,7 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
   }
   query RecommendedProducts ($country: CountryCode, $language: LanguageCode)
     @inContext(country: $country, language: $language) {
-    products(first: 4, sortKey: UPDATED_AT, reverse: true) {
+    products(first: 8, sortKey: UPDATED_AT, reverse: true) {
       nodes {
         ...RecommendedProduct
       }
