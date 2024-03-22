@@ -4,7 +4,7 @@
   --cart-aside-summary-height: 250px;
   --grid-item-width: 355px;
   --header-height: 64px;
-  --color-dark: #000;
+  --color-dark: #0f0f0f;
   --color-light: #fff;
 }
 
@@ -344,6 +344,7 @@ aside li {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
+  padding-inline: 50px;
 
   @media (min-width: 45em) {
     grid-template-columns: repeat(4, 1fr);
@@ -352,6 +353,7 @@ aside li {
 
 .recommended-product img {
   height: auto;
+  object-fit: cover;
 }
 
 .hero-wrapper>img {

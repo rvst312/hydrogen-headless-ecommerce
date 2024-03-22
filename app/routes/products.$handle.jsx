@@ -106,6 +106,8 @@ export default function Product() {
   /** @type {LoaderReturnData} */
   const {product, variants} = useLoaderData();
   const {selectedVariant} = product;
+  console.log(useLoaderData());
+  
   return (
     <div className="product">
       <ProductImage image={selectedVariant?.image} />
