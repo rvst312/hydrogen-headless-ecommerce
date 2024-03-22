@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { useRootLoaderData } from '~/root';
 import { MenuIcon } from './icons/menuBurguer';
 import { SearchIcon } from './icons/search';
-import { CartIcon } from './icons/cart'
+import { CartIcon } from './icons/cart';
 
 /**
  * @param {HeaderProps}
