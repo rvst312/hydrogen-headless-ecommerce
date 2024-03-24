@@ -116,6 +116,7 @@ aside li {
   height: 100%;
   position: absolute;
   width: 100%;
+  margin: auto;
 }
 
 .overlay:target {
