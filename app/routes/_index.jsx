@@ -1,10 +1,8 @@
 import { defer } from '@shopify/remix-oxygen';
 import React, { useState } from 'react';
-import { Await, useLoaderData, Link } from '@remix-run/react';
-import { Suspense } from 'react';
-import { Image, Money } from '@shopify/hydrogen';
-import { HeroHome } from '../components/HeroHome';
-import { BentoGrid } from '../components/bentoGrid';
+import { useLoaderData } from '@remix-run/react';
+import { HeroHome, CardsCategory } from '../components/HeroHome';
+import RecommendedProducts from '../components/RecomendedProducts';
 
 /**
  * @type {MetaFunction}
@@ -32,51 +30,13 @@ export default function Homepage() {
   return (
     <div className="home">
       <HeroHome />
-      <BentoGrid />
+      <CardsCategory />
+      <RecommendedProducts products={data.recommendedProducts} />
       <RecommendedProducts products={data.recommendedProducts} />
     </div>
   );
 }
 
-/**
- * @param {{
- *   products: Promise<RecommendedProductsQuery>;
- * }}
- */
-function RecommendedProducts({ products }) {
-
-  return (
-    <div className="recommended-products">
-      <h2>Nuestras flores</h2>
-      <Suspense fallback={<div>Cargando...</div>}>
-        <Await resolve={products}>
-          {({ products }) => (
-            <div className="recommended-products-grid">
-              {products.nodes.map((product) => (
-                <Link
-                  key={product.id}
-                  className="recommended-product"
-                  to={`/products/${product.handle}`}
-                >
-                  <Image
-                    data={product.images.nodes[0]}
-                    aspectRatio="1/1"
-                    sizes="(min-width: 45em) 20vw, 50vw"
-                  />
-                  <h4>{product.title}</h4>
-                  <small>
-                    <Money data={product.priceRange.minVariantPrice} />
-                  </small>
-                </Link>
-              ))}
-            </div>
-          )}
-        </Await>
-      </Suspense>
-      <br />
-    </div >
-  );
-}
 
 const FEATURED_COLLECTION_QUERY = `#graphql
   fragment FeaturedCollection on Collection {

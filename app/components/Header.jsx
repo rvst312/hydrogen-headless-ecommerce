@@ -1,28 +1,45 @@
-import { Await, NavLink } from '@remix-run/react';
+import { Await, NavLink, Link } from '@remix-run/react';
 import { Suspense } from 'react';
 import { useRootLoaderData } from '~/root';
-import { MenuIcon } from './icons/menuBurguer';
-import { SearchIcon } from './icons/search';
-import { CartIcon } from './icons/cart';
+import {
+  MenuIcon,
+  SearchIcon,
+  CartIcon
+} from './icons/icon';
+
 
 /**
  * @param {HeaderProps}
  */
-export function Header({ header, isLoggedIn, cart }) {
+export function Header({ header, cart }) {
   const { shop, menu } = header;
   return (
+
     <header className="header">
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
         <span>
-          <img className='logo' src="https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Juicy-cbd-logotipo-version-negro.png?v=1709477595" alt="JUICYCBD" />
+          <img className='logo' src="https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Juicy-cbd-logotipo-version-naranja.png?v=1711816712" alt="JUICYCBD" />
         </span>
       </NavLink>
-      <HeaderMenu
-        menu={menu}
-        viewport="desktop"
-        primaryDomainUrl={header.shop.primaryDomain.url}
-      />
-      <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
+      <div className="nav-wrapper">
+        <HeaderMenu
+          menu={menu}
+          viewport="desktop"
+          primaryDomainUrl={header.shop.primaryDomain.url}
+        />
+        <Link
+          className="primary-button"
+          to="/collections"
+          onClick={() => {
+            if (layout === 'aside') {
+              window.location.href = '/collections';
+            }
+          }}
+        >
+          Shop
+        </Link>
+        <HeaderCtas cart={cart} />
+      </div>
     </header>
   );
 }
@@ -86,21 +103,12 @@ export function HeaderMenu({ menu, primaryDomainUrl, viewport }) {
 }
 
 /**
- * @param {Pick<HeaderProps, 'isLoggedIn' | 'cart'>}
+ * @param {Pick<HeaderProps | 'cart'>}
  */
-function HeaderCtas({ isLoggedIn, cart }) {
+function HeaderCtas({ cart }) {
   return (
     <nav className="header-ctas" role="navigation">
       <HeaderMenuMobileToggle />
-      {/*
-      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
-        <Suspense fallback="Sign in">
-          <Await resolve={isLoggedIn} errorElement="Sign in">
-            {(isLoggedIn) => (isLoggedIn ? 'Account' : 'Sign in')}
-          </Await>
-        </Suspense>
-      </NavLink>
-       */}
       <SearchToggle />
       <CartToggle cart={cart} />
     </nav>
@@ -131,7 +139,7 @@ function SearchToggle() {
 function CartBadge({ count }) {
   return (
     <a href="#cart-aside">
-      <CartIcon /> 
+      <CartIcon />
       <span style={{ fontSize: '11px' }}>{count}</span>
     </a>
   );
@@ -208,7 +216,7 @@ function activeLinkStyle({ isActive, isPending }) {
   };
 }
 
-/** @typedef {Pick<LayoutProps, 'header' | 'cart' | 'isLoggedIn'>} HeaderProps */
+/** @typedef {Pick<LayoutProps, 'header' | 'cart' >} HeaderProps */
 /** @typedef {'desktop' | 'mobile'} Viewport */
 
 /** @typedef {import('storefrontapi.generated').HeaderQuery} HeaderQuery */
