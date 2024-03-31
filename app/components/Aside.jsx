@@ -1,4 +1,4 @@
-import { CloseIcon } from './icons/close';
+import { CloseIcon } from './icons/icon';
 
 /**
  * A side bar component with Overlay that works without JavaScript.
