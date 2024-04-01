@@ -10,15 +10,23 @@ import { Suspense } from 'react';
  * }}
  */
 
-export default function RecommendedProducts({ products }) {
+export default function RecommendedProducts({ products, textBar }) {
+
+    // Contenído que muestra la barra de texto
+    const flowers = Array(20).fill(textBar);
+    const bar_content = flowers.join(" · ");
 
     return (
         <div className="recommended-products">
             <div className="text-bar">
                 <div className="text-container">
-                    <h4>
-                        FLOWERS · FLOWERS · FLOWERS · FLOWERS · FLOWERS · FLOWERS · FLOWERS · FLOWERS · FLOWERS · FLOWERS
-                    </h4>
+                    <div className="track">
+                        <div className="content">
+                            <h2>
+                                { bar_content } 
+                            </h2>
+                        </div>
+                    </div>
                 </div>
             </div>
 

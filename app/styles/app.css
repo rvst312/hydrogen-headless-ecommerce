@@ -129,7 +129,7 @@ aside li {
   * --------------------------------------------------
   */
 .logo {
-  width: 200px;
+  width: 180px;
 }
 
 .header {
@@ -184,21 +184,6 @@ aside li {
   display: flex;
   grid-gap: 1rem;
   margin-left: auto;
-}
-
-.primary-button {
-  display: none;
-}
-@media (min-width: 58em) {
-  .primary-button {
-    display: block;
-    padding: 8px 40px;
-    background-color: var(--color-red);
-    color: var(--color-white);
-    border-radius: 6.87rem;
-    font-size: 1.06rem;
-    font-weight: medium;
-  }
 }
 
 /*
@@ -362,7 +347,6 @@ aside li {
   padding: 3rem;
 }
 .hero-wrapper .content .left h1 {
-  font-size: 55px;
   line-height: 3.5rem;
 }
 .hero-wrapper .content .left p {
@@ -405,11 +389,6 @@ section .section-wrapper .card-wrapper {
 section .section-wrapper .card-wrapper .left {
   flex: 1;
   padding: 40px;
-  /*Quitar*/
-  /*Quitar*/
-}
-section .section-wrapper .card-wrapper .left h3 {
-  font-size: 50px;
 }
 section .section-wrapper .card-wrapper .left p {
   font-weight: 300;
@@ -453,21 +432,32 @@ section .section-wrapper .card-wrapper .right img:hover {
   margin-top: 2%;
   margin-bottom: 4%;
   display: flex;
+  overflow: hidden;
 }
 .recommended-products .text-bar .text-container {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   width: 100%;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.recommended-products .text-bar .text-container .track {
   background: var(--color-dark);
   color: var(--color-white);
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
-  overflow: hidden;
-}
-.recommended-products .text-bar .text-container h4 {
-  font-size: 40px;
+  position: absolute;
   white-space: nowrap;
-  margin-left: -1rem;
+  will-change: transform;
+  animation: marquee 22s linear infinite;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 .recommended-products .recommended-products-grid {
   display: grid;
@@ -489,6 +479,11 @@ section .section-wrapper .card-wrapper .right img:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.recommended-products .recommended-products-grid .recommended-product .info-prod small {
+  color: var(--color-red);
+  font-weight: 800;
+  font-size: 1rem;
 }
 
 /*
