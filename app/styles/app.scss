@@ -415,9 +415,17 @@ section {
                 flex: 1;
                 padding: 40px;
 
-                h3 {font-size: 50px;}/*Quitar*/
+                h3 {
+                    font-size: 50px;
+                }
 
-                p {font-weight: 300;}/*Quitar*/
+                /*Quitar*/
+
+                p {
+                    font-weight: 300;
+                }
+
+                /*Quitar*/
             }
 
             .right {
@@ -427,10 +435,10 @@ section {
                 img {
                     width: 350px;
                     margin-top: -0.6rem;
-                    transition: transform 0.15s ease-in-out; 
+                    transition: transform 0.15s ease-in-out;
 
                     &:hover {
-                        transform: translateY(-15px); 
+                        transform: translateY(-15px);
                     }
                 }
             }
@@ -458,13 +466,13 @@ section {
     object-fit: cover;
 }
 
-.recommended-products{
+.recommended-products {
 
-    .text-bar{
+    .text-bar {
         margin-top: 2%;
         margin-bottom: 4%;
         display: flex;
-        
+
         .text-container {
             display: flex;
             align-items: center;
@@ -474,20 +482,11 @@ section {
             padding-top: 1.2rem;
             padding-bottom: 1.2rem;
             overflow: hidden;
-            
-            h4{
+
+            h4 {
                 font-size: 40px;
-                white-space: nowrap; 
+                white-space: nowrap;
                 margin-left: -1rem;
-            }
-        }
-        
-        @keyframes rotateText {
-            0% {
-                transform: translateX(0); /* Comienza desde la posición original */
-            }
-            100% {
-                transform: translateX(-100%); /* Se mueve hacia la izquierda */
             }
         }
     }
@@ -497,22 +496,24 @@ section {
         grid-gap: 1.5rem;
         grid-template-columns: repeat(2, 1fr);
         padding-inline: 50px;
-    
+
         @media (min-width: 45em) {
             grid-template-columns: repeat(4, 1fr);
         }
 
-        .info-prod{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .recommended-product {
+
+            img {
+                height: auto;
+                object-fit: cover;
+            }
+            .info-prod {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
         }
     }
-}
-
-.recommended-product img {
-    height: auto;
-    object-fit: cover;
 }
 
 /*
