@@ -31,8 +31,8 @@ export default function Homepage() {
     <div className="home">
       <HeroHome />
       <CardsCategory />
-      <RecommendedProducts products={data.recommendedProducts} />
-      <RecommendedProducts products={data.recommendedProducts} />
+      <RecommendedProducts products={data.recommendedProducts} textBar="FLOWERS"/>
+      <RecommendedProducts products={data.recommendedProducts} textBar="PACKS"/>
     </div>
   );
 }

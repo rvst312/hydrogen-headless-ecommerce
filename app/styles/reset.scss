@@ -7,73 +7,83 @@
   --color-white: #fff;
 }
 
+@font-face {
+  font-family: 'Stinger';
+  src: url('https://cdn.shopify.com/s/files/1/0822/2569/3009/files/StingerTrial-Bold.ttf?v=1711991517');
+  font-weight: 800; 
+  font-stretch: 120%; 
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: articulat-cf, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.primary-button {
+  font-family: Stinger, sans-serif;
 }
 
 h1 {
-  font-size: 1.563rem;
-  font-weight: medium;
+  font-size: 3.8rem;
   line-height: 1.894rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
 h2 {
-  font-size: 1.375rem;
-  font-weight: medium;
+  font-size: 3.1rem;
   line-height: 1.688;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
 
 h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 2.8rem;
   line-height: 1.563;
   margin-top: .8rem;
   margin-bottom: .8rem;
 }
 
 h4 {
-  font-size: 1.125rem;
-  font-weight: bold;
+  font-size: 1.5rem;
   line-height: 1.313rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 h5 {
-  font-size: 0.938rem;
-  font-weight: bold;
+  font-size: 1.1rem;
   line-height: 1.125rem;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
 
 h6 {
-  font-size: 0.813rem;
-  font-weight: bold;
+  font-size: 0.8rem;
   line-height: 1.125rem;
   margin-bottom: 0.25rem;
   margin-top: 0.25rem;
 }
 
 p {
-  font-size: 0.938rem;
-  line-height: 1.131rem;
-  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.15rem;
+  font-weight: 100;
 }
 
 a {
-  color: #000;
   text-decoration: none;
+  color: var(--color-dark);
 }
 
 a:hover {
@@ -139,4 +149,18 @@ li {
 
 dl {
   margin: 0.5rem 0;
+}
+
+.primary-button {
+  display: none;
+
+  @media (min-width: 58em) {
+      display: block;
+      padding: 8px 40px;
+      background-color: var(--color-red);
+      color: var(--color-white);
+      border-radius: 6.87rem;
+      font-size: 1.06rem;
+      letter-spacing: .08rem;
+  }
 }

@@ -132,7 +132,7 @@ aside li {
   */
 
 .logo {
-    width: 200px;
+    width: 180px;
 }
 
 .header {
@@ -186,20 +186,6 @@ aside li {
     display: flex;
     grid-gap: 1rem;
     margin-left: auto;
-}
-
-.primary-button {
-    display: none;
-
-    @media (min-width: 58em) {
-        display: block;
-        padding: 8px 40px;
-        background-color: var(--color-red);
-        color: var(--color-white);
-        border-radius: 6.87rem;
-        font-size: 1.06rem;
-        font-weight: medium;
-    }
 }
 
 /*
@@ -364,7 +350,6 @@ aside li {
             padding: 3rem;
 
             h1 {
-                font-size: 55px;
                 line-height: 3.5rem
             }
 
@@ -415,17 +400,9 @@ section {
                 flex: 1;
                 padding: 40px;
 
-                h3 {
-                    font-size: 50px;
-                }
-
-                /*Quitar*/
-
                 p {
                     font-weight: 300;
                 }
-
-                /*Quitar*/
             }
 
             .right {
@@ -472,21 +449,34 @@ section {
         margin-top: 2%;
         margin-bottom: 4%;
         display: flex;
-
+        overflow: hidden;
+        
         .text-container {
+            position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
             width: 100%;
-            background: var(--color-dark);
-            color: var(--color-white);
-            padding-top: 1.2rem;
-            padding-bottom: 1.2rem;
-            overflow: hidden;
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
 
-            h4 {
-                font-size: 40px;
+            .track {
+                background: var(--color-dark);
+                color: var(--color-white);
+                position: absolute;
                 white-space: nowrap;
-                margin-left: -1rem;
+                will-change: transform;
+                animation: marquee 22s linear infinite;
+            }
+
+            @keyframes marquee {
+                from {
+                    transform: translateX(-50%);
+                }
+
+                to {
+                    transform: translateX(0%);
+                }
             }
         }
     }
@@ -507,10 +497,17 @@ section {
                 height: auto;
                 object-fit: cover;
             }
+
             .info-prod {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+                small{
+                    color: var(--color-red);
+                    font-weight: 800;
+                    font-size: 1rem;
+                }
             }
         }
     }
