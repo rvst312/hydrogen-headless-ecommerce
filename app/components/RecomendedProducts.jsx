@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Await, Link } from '@remix-run/react';
 import { Image, Money } from '@shopify/hydrogen';
 import { Suspense } from 'react';
