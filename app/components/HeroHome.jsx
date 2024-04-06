@@ -67,7 +67,7 @@ export function HeroHome() {
 export function CardsCategory() {
     const content = [
         {
-            title: "Flowers",
+            title: "FLowers",
             description: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.",
             imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ORANGE-SHERBET.webp?v=1712411760",
             color: "#FFE6E6",
