@@ -4,10 +4,10 @@ import { Link } from '@remix-run/react';
 export function HeroHome() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const imageUrls = [
-        'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/JUICYFRUIT.png?v=1711823022',
-        'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/GRAPE-N_CREAM.webp?v=1711883821',
-        'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ALIEN-FRUIT.webp?v=1711883881',
-        'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ORANGE-SHERBET.webp?v=1711884601',
+        'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/JUICYFRUIT.webp?v=1712411987',
+        'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/GRAPE-N_CREAM.webp?v=1712411896',
+        'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ALIEN-FRUIT.webp?v=1712411808',
+        'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ORANGE-SHERBET.webp?v=1712411760',
     ];
 
     useEffect(() => {
@@ -41,7 +41,7 @@ export function HeroHome() {
                             Go to shop
                         </Link>
                         <Link
-                            className="primary-button"
+                            className="primary-button p-button-mobile"
                             to="/collections"
                             onClick={() => {
                                 if (layout === 'aside') {
@@ -69,25 +69,25 @@ export function CardsCategory() {
         {
             title: "Flowers",
             description: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.",
-            imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ORANGE-SHERBET.webp?v=1711884601",
+            imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ORANGE-SHERBET.webp?v=1712411760",
             color: "#FFE6E6",
         },
         {
             title: "Indoor",
             description: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.",
-            imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/WEEDINGCAKE.webp?v=1711883759",
+            imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/WEEDINGCAKE.webp?v=1712422235",
             color: "#EAEAEA",
         },
         {
             title: "Cali",
             description: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.",
-            imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ALIEN-FRUIT.webp?v=1711883881",
+            imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ALIEN-FRUIT.webp?v=1712411808",
             color: "#EEFBE0",
         },
         {
             title: "Hydro",
             description: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.",
-            imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/AMNESIA.webp?v=1711883881",
+            imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/AMNESIA.webp?v=1712422235",
             color: "#E8F5FC",
         },
     ]
