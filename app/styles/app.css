@@ -649,7 +649,6 @@ section .section-wrapper .card-wrapper .right img:hover {
   .hero-wrapper .content {
     flex-direction: column-reverse;
     gap: 0;
-    margin-top: -2rem;
   }
   .hero-wrapper .content .left {
     padding: 0;
