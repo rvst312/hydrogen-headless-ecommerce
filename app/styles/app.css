@@ -669,6 +669,7 @@ section .section-wrapper .card-wrapper .right img:hover {
     height: auto;
   }
   .hero-wrapper .content .right img {
+    margin-top: 20px;
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
