@@ -372,7 +372,7 @@ section {
   margin-bottom: 1%;
 }
 section .section-wrapper {
-  max-width: 1550px;
+  max-width: 1800px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -399,7 +399,7 @@ section .section-wrapper .card-wrapper .right {
 }
 section .section-wrapper .card-wrapper .right img {
   width: 350px;
-  margin-top: -0.6rem;
+  margin-top: 3rem;
   transition: transform 0.15s ease-in-out;
 }
 section .section-wrapper .card-wrapper .right img:hover {
@@ -428,6 +428,12 @@ section .section-wrapper .card-wrapper .right img:hover {
      object-fit: cover;
 }
 
+.recommended-products .calltoaction {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
 .recommended-products .text-bar {
   margin-top: 2%;
   margin-bottom: 4%;
@@ -461,9 +467,9 @@ section .section-wrapper .card-wrapper .right img:hover {
 }
 .recommended-products .recommended-products-grid {
   display: grid;
-  grid-gap: 1.5rem;
+  grid-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
-  padding-inline: 50px;
+  padding-inline: 10px;
 }
 @media (min-width: 45em) {
   .recommended-products .recommended-products-grid {
@@ -678,10 +684,18 @@ section .section-wrapper .card-wrapper .right img:hover {
     width: auto;
     display: flex;
     flex-direction: column;
-    height: 650px;
+    min-height: 550px;
+    height: 65vh;
+  }
+  section .section-wrapper .card-wrapper .right img {
+    width: 100%;
   }
   .featured-collection-image {
     aspect-ratio: 16/9;
+  }
+  .recommended-products .text-bar .text-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   .recommended-products .recommended-products-grid {
     padding-inline: 10px;

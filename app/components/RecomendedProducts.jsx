@@ -23,7 +23,7 @@ export default function RecommendedProducts({ products, textBar }) {
                     <div className="track">
                         <div className="content">
                             <h2>
-                                { bar_content } 
+                                {bar_content}
                             </h2>
                         </div>
                     </div>
@@ -57,7 +57,19 @@ export default function RecommendedProducts({ products, textBar }) {
                     )}
                 </Await>
             </Suspense>
-            <br />
+            <div className="calltoaction">
+                <Link
+                    className="primary-button p-button-mobile"
+                    to="/collections"
+                    onClick={() => {
+                        if (layout === 'aside') {
+                            window.location.href = '/collections';
+                        }
+                    }}
+                >
+                    Go to shop
+                </Link>
+            </div>
         </div >
     );
 }

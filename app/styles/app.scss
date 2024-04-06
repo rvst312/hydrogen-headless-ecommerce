@@ -382,7 +382,7 @@ section {
     margin-bottom: 1%;
 
     .section-wrapper {
-        max-width: 1550px;
+        max-width: 1800px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -411,7 +411,7 @@ section {
 
                 img {
                     width: 350px;
-                    margin-top: -0.6rem;
+                    margin-top: 3rem;
                     transition: transform 0.15s ease-in-out;
 
                     &:hover {
@@ -444,6 +444,13 @@ section {
 }
 
 .recommended-products {
+
+    .calltoaction{
+        display: flex;
+        justify-content: center;
+        margin-top: .8rem;
+        margin-bottom: .8rem;
+    }
 
     .text-bar {
         margin-top: 2%;
@@ -483,9 +490,9 @@ section {
 
     .recommended-products-grid {
         display: grid;
-        grid-gap: 1.5rem;
+        grid-gap: 10px;
         grid-template-columns: repeat(2, 1fr);
-        padding-inline: 50px;
+        padding-inline: 10px;
 
         @media (min-width: 45em) {
             grid-template-columns: repeat(4, 1fr);
@@ -723,7 +730,8 @@ section {
                 width: auto;
                 display: flex;
                 flex-direction: column;
-                height: 650px;
+                min-height: 550px;
+                height: 65vh;
 
                 .left {
 
@@ -733,6 +741,7 @@ section {
                 .right {
 
                     img {
+                        width: 100%;
 
                         &:hover {}
                     }
@@ -754,6 +763,8 @@ section {
         .text-bar {
 
             .text-container {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
 
                 .track {}
 
