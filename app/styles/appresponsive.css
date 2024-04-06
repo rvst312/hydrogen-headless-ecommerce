@@ -1,0 +1,106 @@
+/*
+  * --------------------------------------------------
+  * Mobile and small tabs
+  * --------------------------------------------------
+*/
+@media only screen and ((min-width: 321px) and (max-width: 480px)) {
+  /*  
+  routes/__index  
+  */
+  .hero-wrapper {
+    height: 100vh;
+  }
+  .hero-wrapper .content {
+    margin-top: 75px;
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+  .hero-wrapper .content .left {
+    padding: 0;
+    padding-inline: 1.5rem;
+  }
+  .hero-wrapper .content .left h1 {
+    margin-top: -1.5rem;
+  }
+  .hero-wrapper .content .left p {
+    padding: 0;
+  }
+  .hero-wrapper .content .right {
+    padding: 0;
+    width: auto;
+    height: auto;
+  }
+  .hero-wrapper .content .right img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  section .section-wrapper {
+    /* Quitar */
+    width: 100%;
+    overflow-x: hidden;
+    /**/
+  }
+  .featured-collection-image {
+    aspect-ratio: 16/9;
+  }
+  .recommended-products .recommended-products-grid {
+    /*grid-template-columns: repeat(4, 1fr);*/
+  }
+  /* 
+      general options
+  */
+  h1 {
+    font-size: 3.5rem;
+    line-height: 0.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  h2 {
+    font-size: 3.1rem;
+    line-height: 1.688;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  h3 {
+    font-size: 2.8rem;
+    line-height: 1.563;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+    line-height: 1.313rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  h5 {
+    font-size: 1.1rem;
+    line-height: 1.125rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  h6 {
+    font-size: 0.8rem;
+    line-height: 1.125rem;
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+  }
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 100;
+  }
+  .p-button-mobile {
+    display: block;
+    padding: 8px 40px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border-radius: 6.87rem;
+    font-size: 1.06rem;
+    letter-spacing: 0.08rem;
+  }
+}
+/* Legacy and small mobiles */
+/* Small Devices, Tablets *//*# sourceMappingURL=appresponsive.css.map */

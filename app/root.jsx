@@ -108,9 +108,10 @@ export default function App() {
   const data = useLoaderData();
 
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
           <link rel="stylesheet" href="https://use.typekit.net/ocs3mqh.css" />
+          <link rel="stylesheet" href="../appresponsive.css" />
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <Meta />
@@ -143,7 +144,7 @@ export function ErrorBoundary() {
   }
 
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
