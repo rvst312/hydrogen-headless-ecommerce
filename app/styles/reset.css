@@ -80,9 +80,11 @@ p {
   font-weight: 100;
 }
 
-a {
+a,
+button {
   text-decoration: none;
   color: var(--color-dark);
+  border: none;
 }
 
 a:hover {
@@ -165,4 +167,4 @@ dl {
     font-size: 1.06rem;
     letter-spacing: 0.08rem;
   }
-}/*# sourceMappingURL=reset.css.map */
+}

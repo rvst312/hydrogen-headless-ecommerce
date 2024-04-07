@@ -1,8 +1,7 @@
 import { Suspense } from 'react';
 import { defer, redirect } from '@shopify/remix-oxygen';
 import { Await, Link, useLoaderData } from '@remix-run/react';
-import 'react-loading-skeleton/dist/skeleton.css'
-
+import 'react-loading-skeleton/dist/skeleton.css';
 
 import {
   Image,
@@ -108,6 +107,7 @@ export default function Product() {
   /** @type {LoaderReturnData} */
   const { product, variants } = useLoaderData();
   const { selectedVariant } = product;
+  //console.log(product)
 
   return (
     <div className="product">
@@ -277,7 +277,7 @@ function ProductOptions({ option }) {
               replace
               to={to}
               style={{
-                border: isActive ? '1px solid black' : '1px solid transparent',
+                background: isActive ? '#EAEAEA' : 'transparent',
                 opacity: isAvailable ? 1 : 0.3,
               }}
             >
@@ -312,6 +312,7 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
           />
           <button
             type="submit"
+            className='primary-button'
             onClick={onClick}
             disabled={disabled ?? fetcher.state !== 'idle'}
           >
@@ -360,6 +361,7 @@ const PRODUCT_VARIANT_FRAGMENT = `#graphql
   }
 `;
 
+
 const PRODUCT_FRAGMENT = `#graphql
   fragment Product on Product {
     id
@@ -368,6 +370,13 @@ const PRODUCT_FRAGMENT = `#graphql
     handle
     descriptionHtml
     description
+    featuredImage {
+      id
+      url
+      altText
+      width
+      height
+    }
     options {
       name
       values
