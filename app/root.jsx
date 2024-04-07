@@ -15,6 +15,7 @@ import {
 import favicon from '../public/favicon.svg';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
+import responsiveStyles from './styles/appresponsive.css'
 import { Layout } from '~/components/Layout';
 
 /**
@@ -39,6 +40,7 @@ export function links() {
   return [
     { rel: 'stylesheet', href: resetStyles },
     { rel: 'stylesheet', href: appStyles },
+    { rel: 'stylesheet', href: responsiveStyles },
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',
@@ -110,8 +112,6 @@ export default function App() {
   return (
     <html lang="es">
       <head>
-          <link rel="stylesheet" href="https://use.typekit.net/ocs3mqh.css" />
-          <link rel="stylesheet" href="../appresponsive.css" />
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <Meta />

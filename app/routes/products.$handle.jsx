@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 import { defer, redirect } from '@shopify/remix-oxygen';
 import { Await, Link, useLoaderData } from '@remix-run/react';
-import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 
