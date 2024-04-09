@@ -34,49 +34,42 @@ h6,
 
 h1 {
   font-size: 3.8rem;
-  line-height: 1.894rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
 h2 {
   font-size: 3.1rem;
-  line-height: 1.688;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
 
 h3 {
   font-size: 2.8rem;
-  line-height: 1.563;
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
 
 h4 {
   font-size: 1.5rem;
-  line-height: 1.313rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 h5 {
   font-size: 1.1rem;
-  line-height: 1.125rem;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
 
 h6 {
   font-size: 0.8rem;
-  line-height: 1.125rem;
   margin-bottom: 0.25rem;
   margin-top: 0.25rem;
 }
 
 p {
   font-size: 1rem;
-  line-height: 1.15rem;
   font-weight: 100;
 }
 
