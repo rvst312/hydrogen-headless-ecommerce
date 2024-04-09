@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 import { defer, redirect } from '@shopify/remix-oxygen';
 import { Await, Link, useLoaderData } from '@remix-run/react';
 import 'react-loading-skeleton/dist/skeleton.css';
-
 import {
   Image,
   Money,
@@ -111,7 +110,7 @@ export default function Product() {
 
   return (
     <div className="product">
-      <ProductImage image={selectedVariant?.image} />
+      <ProductImage image={selectedVariant?.image} featuredImage={product?.featuredImage} />
       <ProductMain
         selectedVariant={selectedVariant}
         product={product}
@@ -123,8 +122,9 @@ export default function Product() {
 
 /**
  * @param {{image: ProductVariantFragment['image']}}
+ * @param {{featuredImage: ProductFragment['featuredImage']}}
  */
-function ProductImage({ image }) {
+function ProductImage({ image, featuredImage }) {
 
   if (!image) {
     return (
@@ -141,6 +141,15 @@ function ProductImage({ image }) {
         key={image.id}
         sizes="(min-width: 45em) 50vw, 100vw"
       />
+      {image.url !== featuredImage.url ? (
+        <Image
+          alt={featuredImage.altText || 'Product Image'}
+          aspectRatio="1/1"
+          data={featuredImage}
+          key={featuredImage.id}
+          sizes="(min-width: 45em) 50vw, 100vw"
+        />
+      ) : null}
     </div>
   );
 }
@@ -158,6 +167,9 @@ function ProductMain({ selectedVariant, product, variants }) {
     <div className="product-main">
       <h1>{title}</h1>
       <ProductPrice selectedVariant={selectedVariant} />
+      { /* Description  */}
+      <br />
+      <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
       <br />
       <Suspense
         fallback={
@@ -182,13 +194,7 @@ function ProductMain({ selectedVariant, product, variants }) {
         </Await>
       </Suspense>
       <br />
-      <br />
-      <p>
-        <strong>Description</strong>
-      </p>
-      <br />
-      <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
-      <br />
+
     </div>
   );
 }
@@ -312,7 +318,7 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
           />
           <button
             type="submit"
-            className='primary-button'
+            className='primary-button p-button-mobile'
             onClick={onClick}
             disabled={disabled ?? fetcher.state !== 'idle'}
           >
