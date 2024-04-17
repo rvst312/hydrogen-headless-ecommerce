@@ -8,7 +8,7 @@
   routes/__index  
   */
   .hero-wrapper {
-    height: 100vh;
+    height: auto;
   }
   .hero-wrapper .content {
     flex-direction: column-reverse;
@@ -38,6 +38,10 @@
     -o-object-fit: cover;
        object-fit: cover;
   }
+  section .section-wrapper {
+    margin-top: var(--margin-section-mobile);
+    margin-bottom: var(--margin-section-mobile);
+  }
   section .section-wrapper .card-wrapper {
     width: auto;
     display: flex;
@@ -57,6 +61,12 @@
   }
   .recommended-products .recommended-products-grid {
     padding-inline: 10px;
+  }
+  .recommended-products .recommended-products-grid .recommended-product .info-prod small {
+    font-size: 0.8rem;
+  }
+  .recommended-products .calltoaction {
+    margin-bottom: var(--margin-section-mobile);
   }
   /*
   * --------------------------------------------------
@@ -118,7 +128,7 @@
     margin-bottom: 0.8rem;
   }
   h4 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }

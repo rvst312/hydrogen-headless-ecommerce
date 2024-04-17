@@ -1,5 +1,5 @@
 import { defer } from '@shopify/remix-oxygen';
-import React, { useState } from 'react';
+import React from 'react';
 import { useLoaderData } from '@remix-run/react';
 import { HeroHome, CardsCategory } from '../components/HeroHome';
 import RecommendedProducts from '../components/RecomendedProducts';
@@ -19,8 +19,9 @@ export const meta = () => {
 export async function loader({ context }) {
   const { storefront } = context;
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
+  const productCollection = storefront.query(PRODUCT_WHIT_COLLECTION);
 
-  return defer({ recommendedProducts });
+  return defer({ recommendedProducts, productCollection });
 }
 
 export default function Homepage() {
@@ -31,11 +32,37 @@ export default function Homepage() {
     <div className="home">
       <HeroHome />
       <CardsCategory />
-      <RecommendedProducts products={data.recommendedProducts} textBar="FLOWERS"/>
-      <RecommendedProducts products={data.recommendedProducts} textBar="PACKS"/>
+      <RecommendedProducts products={data.recommendedProducts} textBar="FLOWERS" />
+      <RecommendedProducts products={data.recommendedProducts} textBar="PACKS" />
     </div>
   );
 }
+
+const PRODUCT_WHIT_COLLECTION = `query{
+  collection( handle: "packs" ) {
+    id
+    handle
+    title
+    description
+    image {
+      id
+      url
+    }
+    products(first: 20) {
+      edges {
+        node {
+          id
+          title
+          featuredImage {
+            id
+            url
+          }
+        }
+      }
+    }
+  }
+}`;
+
 
 
 const FEATURED_COLLECTION_QUERY = `#graphql
@@ -72,7 +99,7 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
         currencyCode
       }
     }
-    images(first: 1) {
+    images(first: 2) {
       nodes {
         id
         url

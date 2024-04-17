@@ -5,10 +5,15 @@ export function HeroHome() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const imageUrls = [
         'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/JUICYFRUIT.webp?v=1712411987',
-        'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/GRAPE-N_CREAM.webp?v=1712411896',
+        'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/GRAPE-N_CREAM.webp?v=1712850992',
         'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ALIEN-FRUIT.webp?v=1712411808',
         'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ORANGE-SHERBET.webp?v=1712411760',
     ];
+
+    const  hero = {
+        h1 : "Shop and Discover CBD",
+        p: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur."
+    } 
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -23,10 +28,10 @@ export function HeroHome() {
             <div className="content">
                 <div className="left">
                     <h1>
-                        Lorem ipsum dolor it amet consectetur
+                        {hero.h1}
                     </h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.
+                        {hero.p}
                     </p>
                     <div className="calls">
                         <Link
@@ -67,7 +72,7 @@ export function HeroHome() {
 export function CardsCategory() {
     const content = [
         {
-            title: "FLowers",
+            title: "Flowers",
             description: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.",
             imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ORANGE-SHERBET.webp?v=1712411760",
             color: "#FFE6E6",
@@ -75,7 +80,7 @@ export function CardsCategory() {
         {
             title: "Indoor",
             description: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.",
-            imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/WEEDINGCAKE.webp?v=1712422235",
+            imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/WEEDINGCAKE.webp?v=1712938190",
             color: "#EAEAEA",
         },
         {
