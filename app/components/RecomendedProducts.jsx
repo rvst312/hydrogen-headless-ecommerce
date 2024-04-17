@@ -40,11 +40,20 @@ export default function RecommendedProducts({ products, textBar }) {
                                     className="recommended-product"
                                     to={`/products/${product.handle}`}
                                 >
-                                    <Image
-                                        data={product.images.nodes[0]}
-                                        aspectRatio="1/1"
-                                        sizes="(min-width: 45em) 20vw, 50vw"
-                                    />
+                                    <div className="image-wrapper">
+                                        <Image
+                                            data={product.images.nodes[1] ?? product.images.nodes[0]}
+                                            aspectRatio="1/1"
+                                            sizes="(min-width: 45em) 20vw, 50vw"
+                                            className="default-image"
+                                        />
+                                        <Image
+                                            data={product.images.nodes[0]}
+                                            aspectRatio="1/1"
+                                            sizes="(min-width: 45em) 20vw, 50vw"
+                                            className="hover-image"
+                                        />
+                                    </div>
                                     <div className="info-prod">
                                         <h4>{product.title}</h4>
                                         <small>
