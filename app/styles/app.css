@@ -17,6 +17,7 @@
   --grid-item-width: 355px;
   --header-height: 70px;
   --margin-section-mobile: 2rem;
+  --margin-section-desk: 3rem;
 }
 
 /*
@@ -197,17 +198,43 @@ aside li {
 .footer {
   background: var(--color-dark);
   margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 2rem 3rem;
 }
-
-.footer-menu {
+.footer .links-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.footer .links-wrapper .footer-menu {
   align-items: center;
   display: flex;
   grid-gap: 1rem;
   padding: 1rem;
 }
-
-.footer-menu a {
+.footer .links-wrapper .footer-menu a {
   color: var(--color-white);
+}
+.footer .logo-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer .logo-footer img {
+  width: 100px;
+}
+.footer .logo-footer span {
+  color: var(--color-grey-light);
+  font-family: Stinger;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+.footer .logo-footer span p {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
 }
 
 /*
@@ -316,6 +343,20 @@ aside li {
   flex: row;
   align-items: center;
   gap: 1rem;
+}
+
+/*
+  * --------------------------------------------------
+  * components/SocialMediaIcons
+  * --------------------------------------------------
+  */
+.sm-icons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--color-grey-light);
+  cursor: pointer;
 }
 
 /*
@@ -431,6 +472,10 @@ section .section-wrapper .card-wrapper .right img:hover {
      object-fit: cover;
 }
 
+.recommended-products {
+  margin-top: var(--margin-section-desk);
+  margin-bottom: var(--margin-section-desk);
+}
 .recommended-products .calltoaction {
   display: flex;
   justify-content: center;
@@ -491,7 +536,7 @@ section .section-wrapper .card-wrapper .right img:hover {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 0s ease 0.2s;
 }
 .recommended-products .recommended-products-grid .recommended-product .image-wrapper:hover .hover-image {
   opacity: 1;
@@ -506,6 +551,21 @@ section .section-wrapper .card-wrapper .right img:hover {
   color: var(--color-red);
   font-weight: 800;
   font-size: 1rem;
+}
+
+.garanties {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: var(--margin-section-desk);
+  padding: 5rem 3rem;
+}
+.garanties .icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 /*
@@ -572,6 +632,7 @@ section .section-wrapper .card-wrapper .right img:hover {
 
 .product-image {
   height: 100vh;
+  scroll-snap-type: y mandatory;
 }
 .product-image img {
   height: auto;

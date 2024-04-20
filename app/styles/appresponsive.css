@@ -59,9 +59,6 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
-  .recommended-products .recommended-products-grid {
-    padding-inline: 10px;
-  }
   .recommended-products .recommended-products-grid .recommended-product .info-prod small {
     font-size: 0.8rem;
   }
