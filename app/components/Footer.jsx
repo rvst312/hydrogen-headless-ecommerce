@@ -1,15 +1,24 @@
-import {NavLink} from '@remix-run/react';
-import {useRootLoaderData} from '~/root';
-
+import { NavLink } from '@remix-run/react';
+import { useRootLoaderData } from '~/root';
+import { SocialMediaIcons } from './icons/SocialMediaIcons'
 /**
  * @param {FooterQuery & {shop: HeaderQuery['shop']}}
  */
-export function Footer({menu, shop}) {
+export function Footer({ menu, shop }) {
   return (
     <footer className="footer">
-      {menu && shop?.primaryDomain?.url && (
-        <FooterMenu menu={menu} primaryDomainUrl={shop.primaryDomain.url} />
-      )}
+      <div className="links-wrapper">
+        <SocialMediaIcons />
+        {menu && shop?.primaryDomain?.url && (
+          <FooterMenu menu={menu} primaryDomainUrl={shop.primaryDomain.url} />
+        )}
+      </div>
+      <div className="logo-footer">
+        <img src="https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Juicy-cbd-estrella-version-naranja.png?v=1712652544" alt="JUICYCBD" />
+        <span>
+          JUICY HEMP C.B <br /> <p>Grown in Italy, based in Spain</p>
+        </span>
+      </div>
     </footer>
   );
 }
@@ -20,8 +29,8 @@ export function Footer({menu, shop}) {
  *   primaryDomainUrl: HeaderQuery['shop']['primaryDomain']['url'];
  * }}
  */
-function FooterMenu({menu, primaryDomainUrl}) {
-  const {publicStoreDomain} = useRootLoaderData();
+function FooterMenu({ menu, primaryDomainUrl }) {
+  const { publicStoreDomain } = useRootLoaderData();
 
   return (
     <nav className="footer-menu" role="navigation">
@@ -30,8 +39,8 @@ function FooterMenu({menu, primaryDomainUrl}) {
         // if the url is internal, we strip the domain
         const url =
           item.url.includes('myshopify.com') ||
-          item.url.includes(publicStoreDomain) ||
-          item.url.includes(primaryDomainUrl)
+            item.url.includes(publicStoreDomain) ||
+            item.url.includes(primaryDomainUrl)
             ? new URL(item.url).pathname
             : item.url;
         const isExternal = !url.startsWith('/');
@@ -103,7 +112,7 @@ const FALLBACK_FOOTER_MENU = {
  *   isPending: boolean;
  * }}
  */
-function activeLinkStyle({isActive, isPending}) {
+function activeLinkStyle({ isActive, isPending }) {
   return {
     fontWeight: isActive ? 'bold' : undefined,
     color: isPending ? 'grey' : 'white',

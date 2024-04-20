@@ -3,6 +3,7 @@ import React from 'react';
 import { useLoaderData } from '@remix-run/react';
 import { HeroHome, CardsCategory } from '../components/HeroHome';
 import RecommendedProducts from '../components/RecomendedProducts';
+import { EyeIcon } from '../components/icons/icon'
 
 /**
  * @type {MetaFunction}
@@ -34,7 +35,40 @@ export default function Homepage() {
       <CardsCategory />
       <RecommendedProducts products={data.recommendedProducts} textBar="FLOWERS" />
       <RecommendedProducts products={data.recommendedProducts} textBar="PACKS" />
+      <GarantyIcons />
     </div>
+  );
+}
+
+export function GarantyIcons() {
+
+  return (
+    <section className='garanties'>
+      <div className="icon-wrapper">
+      <EyeIcon />
+        <span>
+          Envío discreto
+        </span>
+      </div>
+      <div className="icon-wrapper">
+      <EyeIcon />
+        <span>
+          Envío discreto
+        </span>
+      </div>
+      <div className="icon-wrapper">
+      <EyeIcon />
+        <span>
+          Envío discreto
+        </span>
+      </div>
+      <div className="icon-wrapper">
+      <EyeIcon />
+        <span>
+          Envío discreto
+        </span>
+      </div>
+    </section>
   );
 }
 

@@ -78,9 +78,6 @@ button {
   text-decoration: none;
   color: var(--color-dark);
   border: none;
-}
-
-a:hover {
   cursor: pointer;
 }
 
