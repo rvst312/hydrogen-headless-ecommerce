@@ -4,6 +4,16 @@
   * --------------------------------------------------
 */
 @media only screen and ((min-width: 321px) and (max-width: 480px)) {
+  /*
+  * --------------------------------------------------
+  * components/Aside
+  * --------------------------------------------------
+  */
+  aside {
+    max-width: var(--aside-width-mobile);
+    min-width: var(--aside-width-mobile);
+  }
+  /* reveal aside */
   /*  
   routes/__index  
   */
@@ -74,6 +84,7 @@
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    width: auto;
   }
   .product-image::-webkit-scrollbar {
     width: 5rem;
@@ -85,6 +96,7 @@
   }
   .product-image img {
     min-width: 100%;
+    height: auto;
     scroll-snap-align: center;
   }
   .product-main {
@@ -92,6 +104,8 @@
   }
   .product-main h1 {
     margin-top: 1rem;
+    width: -moz-max-content;
+    width: max-content;
   }
   .product-main .product-form {
     display: flex;
@@ -110,7 +124,7 @@
   * --------------------------------------------------
   */
   h1 {
-    font-size: 3rem;
+    font-size: 3.3rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
   }

@@ -11,7 +11,8 @@
   /* 
    * General sizes 
    */
-  --aside-width: 400px;
+  --aside-width: 500px;
+  --aside-width-mobile: 85vw;
   --cart-aside-summary-height-with-discount: 300px;
   --cart-aside-summary-height: 250px;
   --grid-item-width: 355px;
@@ -36,16 +37,13 @@ aside {
   top: 0;
   transition: transform 200ms ease-in-out;
 }
-
 aside header {
   align-items: center;
-  border-bottom: 1px solid var(--color-dark);
   display: flex;
   height: var(--header-height);
   justify-content: space-between;
   padding: 0 20px;
 }
-
 aside header .close {
   font-weight: bold;
   opacity: 0.8;
@@ -53,16 +51,19 @@ aside header .close {
   transition: all 200ms;
   width: 20px;
 }
-
 aside header .close:hover {
   opacity: 1;
 }
-
+aside header .close svg {
+  background: var(--color-dark);
+  padding: 10px;
+  border-radius: 50%;
+  color: var(--color-white);
+}
 aside header h2 {
   margin-bottom: 0.6rem;
   margin-top: 0;
 }
-
 aside main {
   margin: 1rem;
 }
@@ -80,7 +81,9 @@ aside li {
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.305);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
   bottom: 0;
   left: 0;
   opacity: 0;
@@ -165,6 +168,10 @@ aside li {
   display: flex;
   flex-direction: column;
   grid-gap: 1rem;
+  text-align: center;
+  font-family: stinger;
+  font-size: 4rem;
+  letter-spacing: 2.5px;
 }
 
 .header-menu-desktop {
@@ -228,12 +235,11 @@ aside li {
 }
 .footer .logo-footer span {
   color: var(--color-grey-light);
-  font-family: Stinger;
   letter-spacing: 1.5px;
   text-align: center;
 }
 .footer .logo-footer span p {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   letter-spacing: 2px;
 }
 
@@ -358,6 +364,10 @@ aside li {
   color: var(--color-grey-light);
   cursor: pointer;
 }
+.sm-icons-wrapper svg {
+  color: var(--color-red);
+  stroke-width: 1px;
+}
 
 /*
   * --------------------------------------------------
@@ -391,7 +401,7 @@ aside li {
   padding: 3rem;
 }
 .hero-wrapper .content .left h1 {
-  line-height: 3.5rem;
+  line-height: 1em;
 }
 .hero-wrapper .content .left p {
   padding-right: 5rem;
@@ -444,7 +454,6 @@ section .section-wrapper .card-wrapper .right {
 section .section-wrapper .card-wrapper .right img {
   width: 350px;
   margin-top: 3rem;
-  transition: transform 0.15s ease-in-out;
 }
 section .section-wrapper .card-wrapper .right img:hover {
   transform: translateY(-15px);
@@ -530,6 +539,21 @@ section .section-wrapper .card-wrapper .right img:hover {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.15s ease-in-out;
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+  animation-timeline: --image;
+  animation-name: show;
+  animation-range: entry 25% cover 50%;
+  animation-fill-mode: both;
+}
+@keyframes show {
+  from {
+    scale: 25%;
+  }
+  to {
+    scale: 100%;
+  }
 }
 .recommended-products .recommended-products-grid .recommended-product .image-wrapper .hover-image {
   position: absolute;
@@ -616,26 +640,44 @@ section .section-wrapper .card-wrapper .right img:hover {
   * routes/products.$handle.tsx
   * --------------------------------------------------
   */
-.product {
+.product-wrapper .product {
   display: grid;
 }
 @media (min-width: 45em) {
-  .product {
+  .product-wrapper .product {
     grid-template-columns: 1fr 1fr;
     grid-gap: 4rem;
   }
 }
-
-.product h1 {
+.product-wrapper .product h1 {
   margin-top: 0;
+}
+.product-wrapper .description-large-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem;
+  gap: 50px;
+}
+.product-wrapper .description-large-wrapper .left {
+  width: -moz-min-content;
+  width: min-content;
+  display: flex;
+  align-items: center;
+}
+.product-wrapper .description-large-wrapper .right {
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 600px;
+  margin-top: 1.5rem;
 }
 
 .product-image {
-  height: 100vh;
-  scroll-snap-type: y mandatory;
+  height: auto;
+  width: 55vw;
 }
 .product-image img {
-  height: auto;
+  height: calc(100vh - 70px);
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -650,6 +692,10 @@ section .section-wrapper .card-wrapper .right img:hover {
   font-size: 1.8rem;
   color: var(--color-red);
   font-weight: 500;
+}
+.product-main .description {
+  max-width: 650px;
+  margin-right: 3rem;
 }
 
 .product-price-on-sale {

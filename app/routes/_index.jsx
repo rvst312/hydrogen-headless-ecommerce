@@ -3,7 +3,7 @@ import React from 'react';
 import { useLoaderData } from '@remix-run/react';
 import { HeroHome, CardsCategory } from '../components/HeroHome';
 import RecommendedProducts from '../components/RecomendedProducts';
-import { EyeIcon } from '../components/icons/icon'
+import { EyeIcon, TruckIcon, LightIcon, TickIcon } from '../components/icons/icon'
 
 /**
  * @type {MetaFunction}
@@ -20,9 +20,8 @@ export const meta = () => {
 export async function loader({ context }) {
   const { storefront } = context;
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
-  const productCollection = storefront.query(PRODUCT_WHIT_COLLECTION);
 
-  return defer({ recommendedProducts, productCollection });
+  return defer({ recommendedProducts });
 }
 
 export default function Homepage() {
@@ -45,27 +44,27 @@ export function GarantyIcons() {
   return (
     <section className='garanties'>
       <div className="icon-wrapper">
-      <EyeIcon />
+        <EyeIcon />
         <span>
           Envío discreto
         </span>
       </div>
       <div className="icon-wrapper">
-      <EyeIcon />
+        <TruckIcon />
         <span>
-          Envío discreto
+          24/48 hrs
         </span>
       </div>
       <div className="icon-wrapper">
-      <EyeIcon />
+        <LightIcon />
         <span>
-          Envío discreto
+          100% indoor
         </span>
       </div>
       <div className="icon-wrapper">
-      <EyeIcon />
+        <TickIcon />
         <span>
-          Envío discreto
+          Pago seguro
         </span>
       </div>
     </section>
