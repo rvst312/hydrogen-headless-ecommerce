@@ -109,13 +109,16 @@ export default function Product() {
   //console.log(product)
 
   return (
-    <div className="product">
-      <ProductImage image={selectedVariant?.image} featuredImage={product?.featuredImage} />
-      <ProductMain
-        selectedVariant={selectedVariant}
-        product={product}
-        variants={variants}
-      />
+    <div className="product-wrapper">
+      <div className="product">
+        <ProductImage image={selectedVariant?.image} featuredImage={product?.featuredImage} />
+        <ProductMain
+          selectedVariant={selectedVariant}
+          product={product}
+          variants={variants}
+        />
+      </div>
+      <DescriptionLarge />
     </div>
   );
 }
@@ -169,7 +172,7 @@ function ProductMain({ selectedVariant, product, variants }) {
       <ProductPrice selectedVariant={selectedVariant} />
       { /* Description  */}
       <br />
-      <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
+      <div className='description' dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
       <br />
       <Suspense
         fallback={
@@ -194,6 +197,7 @@ function ProductMain({ selectedVariant, product, variants }) {
         </Await>
       </Suspense>
       <br />
+
 
     </div>
   );
@@ -327,6 +331,24 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
         </>
       )}
     </CartForm>
+  );
+}
+
+function DescriptionLarge() {
+  const description_large = {
+    h2: "Description Large",
+    p: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda temporibus quod quisquam accusamus reiciendis, iste odit saepe, facilis quibusdam accusantium voluptas totam modi architecto doloribus ipsa rerum quasi enim. Praesentium."
+  }
+
+  return (
+    <div className="description-large-wrapper">
+      <div className="left">
+        <h3>{description_large.h2}</h3>
+      </div>
+      <div className="right">
+        <p>{description_large.p}</p>
+      </div>
+    </div>
   );
 }
 

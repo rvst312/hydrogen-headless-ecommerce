@@ -27,10 +27,13 @@ export function Aside({ children, heading, id = 'aside' }) {
       />
       <aside>
         <header>
-          <h3>{heading}</h3>
+          {/* heading */}
           <CloseAside />
         </header>
-        <main>{children}</main>
+        <main>
+          {children}
+          <br/>
+        </main>
       </aside>
     </div>
   );
