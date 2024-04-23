@@ -365,7 +365,7 @@ aside li {
   cursor: pointer;
 }
 .sm-icons-wrapper svg {
-  color: var(--color-red);
+  color: var(--color-grey-light);
   stroke-width: 1px;
 }
 

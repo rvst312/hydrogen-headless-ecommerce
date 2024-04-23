@@ -80,43 +80,61 @@
   * routes/products.$handle.tsx
   * --------------------------------------------------
   */
-  .product-image {
+  .product-wrapper .product .product-image {
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     width: auto;
   }
-  .product-image::-webkit-scrollbar {
+  .product-wrapper .product .product-image::-webkit-scrollbar {
     width: 5rem;
     height: 0.5rem;
     background: var(--color-white);
   }
-  .product-image::-webkit-scrollbar-thumb {
+  .product-wrapper .product .product-image::-webkit-scrollbar-thumb {
     background: var(--color-grey-medium);
   }
-  .product-image img {
+  .product-wrapper .product .product-image img {
     min-width: 100%;
     height: auto;
     scroll-snap-align: center;
   }
-  .product-main {
+  .product-wrapper .product .product-main {
     padding-inline: 10px;
   }
-  .product-main h1 {
+  .product-wrapper .product .product-main h1 {
     margin-top: 1rem;
     width: -moz-max-content;
     width: max-content;
   }
-  .product-main .product-form {
+  .product-wrapper .product .product-main .product-form {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: sticky;
+    bottom: 0;
+    background-color: var(--color-white);
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-grey-light);
   }
-  .product-main .product-form .product-options {
+  .product-wrapper .product .product-main .product-form .product-options {
     display: flex;
   }
-  .product-main .product-form .product-options h5 {
+  .product-wrapper .product .product-main .product-form .product-options h5 {
     display: none;
+  }
+  .product-wrapper .description-large-wrapper {
+    flex-direction: column;
+    padding: 2rem 10px;
+    gap: 0;
+  }
+  .product-wrapper .description-large-wrapper .left {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .product-wrapper .description-large-wrapper .right {
+    margin-top: auto;
   }
   /*
   * --------------------------------------------------
@@ -168,4 +186,32 @@
   }
 }
 /* Legacy and small mobiles */
-/* Small Devices, Tablets */
+/*
+  * --------------------------------------------------
+  * Big Mobile and small tabs
+  * --------------------------------------------------
+*/
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  /*
+  * --------------------------------------------------
+  * components/Aside
+  * --------------------------------------------------
+  */
+  /* reveal aside */
+  /*  
+  routes/__index  
+  */
+  section .section-wrapper .card-wrapper .right img {
+    width: 100%;
+  }
+  /*
+  * --------------------------------------------------
+  * routes/products.$handle.tsx
+  * --------------------------------------------------
+  */
+  /*
+  * --------------------------------------------------
+  * reset.scss
+  * --------------------------------------------------
+  */
+}
