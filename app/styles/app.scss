@@ -180,8 +180,11 @@ aside li {
     grid-gap: 1rem;
     text-align: center;
     font-family: stinger;
-    font-size: 4rem!important;
     letter-spacing: 2.5px;
+
+    a{
+        font-size: 4rem;
+    }
 }
 
 .header-menu-desktop {
