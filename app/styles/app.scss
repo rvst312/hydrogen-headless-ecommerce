@@ -224,13 +224,15 @@ aside li {
 
     .links-wrapper {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: row-reverse;
+        gap: 10px;
 
         .footer-menu {
             align-items: center;
             display: flex;
-            grid-gap: 1rem;
+            grid-gap: 10px;
             padding: 1rem;
+            margin-top: 5px;
 
             a {
                 color: var(--color-white);
@@ -240,9 +242,9 @@ aside li {
 
     .logo-footer {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 10px;
 
         img {
             width: 100px;
@@ -251,7 +253,7 @@ aside li {
         span {
             color: var(--color-grey-light);
             letter-spacing: 1.5px;
-            text-align: center;
+            text-align: start;
 
             p {
                 font-size: .8rem;
@@ -406,7 +408,7 @@ aside li {
     border-radius: 0;
     background-color: var(--color-white);
     background-position: center;
-    background-size: cover;
+    background-size: auto;
 
     .content {
         max-width: 1550px;
@@ -436,12 +438,30 @@ aside li {
 
         .right {
             padding-right: 3rem;
+            transform: translatey(0px);
+	        animation: float 5s ease-in-out infinite;
 
             img {
                 max-width: 32.5rem;
+                height: auto;
             }
         }
     }
+}
+
+@keyframes float {
+	0% {
+        filter: drop-shadow(3px 1px 10px rgba(0,0,0,0.3));
+		transform: translatey(0px);
+	}
+	50% {
+        filter: drop-shadow(3px 25px 10px rgba(0,0,0,0.15));
+		transform: translatey(-15px);
+	}
+	100% {
+        filter: drop-shadow(3px 1px 10px rgba(0,0,0,0.3));
+		transform: translatey(0px);
+	}
 }
 
 section {
