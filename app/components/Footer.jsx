@@ -16,7 +16,7 @@ export function Footer({ menu, shop }) {
       <div className="logo-footer">
         <img src="https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Juicy-cbd-estrella-version-gris.png?v=1711885940" alt="JUICYCBD" />
         <span>
-          JUICY HEMP C.B <br /> <p>Grown in Italy, based in Spain</p>
+        ® JUICY HEMP C.B <br /> <p>Grown in Italy, based in Spain</p>
         </span>
       </div>
     </footer>
