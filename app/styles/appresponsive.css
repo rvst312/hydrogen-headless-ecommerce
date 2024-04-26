@@ -14,8 +14,35 @@
     min-width: var(--aside-width-mobile);
   }
   /* reveal aside */
-  /*  
-  routes/__index  
+  /*
+  * --------------------------------------------------
+  * components/Footer
+  * --------------------------------------------------
+  */
+  .footer {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+  }
+  .footer .links-wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+  .footer .links-wrapper .footer-menu {
+    flex-direction: column-reverse;
+  }
+  .footer .links-wrapper .sm-icons-wrapper {
+    gap: 2rem;
+  }
+  .footer .logo-footer img {
+    width: 70px;
+  }
+  .footer .logo-footer span {
+    font-size: 0.8rem;
+  }
+  /*
+  * --------------------------------------------------
+  * routes/__index  
+  * --------------------------------------------------
   */
   .hero-wrapper {
     height: auto;
@@ -74,6 +101,16 @@
   }
   .recommended-products .calltoaction {
     margin-bottom: var(--margin-section-mobile);
+  }
+  .garanties {
+    text-align: center;
+    gap: 20px;
+    padding-inline: 20px;
+    padding: 1rem;
+  }
+  .garanties .icon-wrapper svg {
+    width: 40px;
+    height: 40px;
   }
   /*
   * --------------------------------------------------

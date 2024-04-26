@@ -50,9 +50,51 @@
     /* reveal aside */
     .overlay:target aside {}
 
-    /*  
-    routes/__index  
-    */
+    /*
+  * --------------------------------------------------
+  * components/Footer
+  * --------------------------------------------------
+  */
+
+    .footer {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+
+        .links-wrapper {
+            flex-direction: column;
+            width: 100%;
+
+            .footer-menu {
+                flex-direction: column-reverse;
+    
+                a {}
+            }
+
+            .sm-icons-wrapper{
+               gap: 2rem;
+            }
+        }
+
+        .logo-footer {
+            
+            img {
+                width: 70px;
+            }
+
+            span {
+                font-size: .8rem;
+
+                p {}
+            }
+        }
+    }
+
+
+    /*
+  * --------------------------------------------------
+  * routes/__index  
+  * --------------------------------------------------
+  */
 
     .hero-wrapper {
         height: auto;
@@ -164,6 +206,23 @@
         }
     }
 
+    .garanties {
+        text-align: center;
+        gap: 20px;
+        padding-inline: 20px;
+        padding: 1rem;
+       
+    
+        .icon-wrapper {
+
+            svg{
+                width: 40px;
+                height: 40px;
+            }
+            
+        }
+    }
+
     /*
   * --------------------------------------------------
   * routes/products.$handle.tsx
@@ -233,18 +292,18 @@
             }
         }
 
-        .description-large-wrapper{
+        .description-large-wrapper {
             flex-direction: column;
             padding: 2rem 10px;
             gap: 0;
 
-            .left{
+            .left {
                 width: fit-content;
             }
 
-            .right{
+            .right {
                 margin-top: auto;
-                
+
             }
 
         }
