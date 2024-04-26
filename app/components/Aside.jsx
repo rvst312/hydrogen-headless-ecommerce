@@ -16,6 +16,7 @@ import { CloseIcon } from './icons/icon';
  * }}
  */
 export function Aside({ children, heading, id = 'aside' }) {
+  
   return (
     <div aria-modal className="overlay" id={id} role="dialog">
       <button
