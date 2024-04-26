@@ -859,29 +859,3 @@ section {
         background-position-x: -20%;
     }
 }
-
-/*
-  * --------------------------------------------------
-  * Reduce animations 
-  * --------------------------------------------------
-*/
-
-@media (prefers-reduced-motion: reduce) {
-
-    .hero-wrapper > .content > .right {
-        animation: none;
-    }
-
-    .recommended-product > .text-bar > .text-container > .track {
-        animation: none;
-    }
-
-    .recommended-products > .recommended-products-grid > .recommended-product > .image-wrapper > img {
-        animation: none;
-    }
-
-    .skeleton-loading {
-        animation: none;
-    }
-}
-
