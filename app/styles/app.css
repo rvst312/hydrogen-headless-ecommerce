@@ -423,6 +423,9 @@ aside li {
 .hero-wrapper .content .right img {
   max-width: 32.5rem;
   height: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 @keyframes float {

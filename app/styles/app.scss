@@ -447,6 +447,7 @@ aside li {
             img {
                 max-width: 32.5rem;
                 height: auto;
+                user-select: none; 
             }
         }
     }
