@@ -141,8 +141,8 @@
   }
   .product-wrapper .product .product-main h1 {
     margin-top: 1rem;
-    width: -moz-max-content;
-    width: max-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .product-wrapper .product .product-main .product-form {
     display: flex;
@@ -169,6 +169,7 @@
   .product-wrapper .description-large-wrapper .left {
     width: -moz-fit-content;
     width: fit-content;
+    overflow: hidden;
   }
   .product-wrapper .description-large-wrapper .right {
     margin-top: auto;

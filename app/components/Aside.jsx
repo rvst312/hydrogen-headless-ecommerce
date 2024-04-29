@@ -41,10 +41,17 @@ export function Aside({ children, heading, id = 'aside' }) {
 }
 
 function CloseAside() {
+  const handleClose = () => {
+    window.history.go(-1); 
+    window.history.replaceState(null, '', window.location.pathname);
+  };
+
   return (
     /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
-    <a className="close" href="#" onChange={() => history.go(-1)}>
+    <a className="close" href="javascript:void(0)" onClick={handleClose}>
       <CloseIcon />
     </a>
   );
 }
+
+export default CloseAside;
