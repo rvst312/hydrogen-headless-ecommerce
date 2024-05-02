@@ -4,8 +4,10 @@ import { useRootLoaderData } from '~/root';
 import {
   MenuIcon,
   SearchIcon,
-  CartIcon
+  CartIcon,
 } from './icons/icon';
+import { SocialMediaIcons } from '../components/icons/SocialMediaIcons'
+
 
 
 /**

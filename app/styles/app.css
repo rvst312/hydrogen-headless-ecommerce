@@ -371,6 +371,8 @@ aside li {
 .sm-icons-wrapper svg {
   color: var(--color-grey-light);
   stroke-width: 1px;
+  width: 25px;
+  height: 25px;
 }
 
 /*
@@ -563,7 +565,7 @@ section .section-wrapper .card-wrapper .right img:hover {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: transform 0.15s ease-in-out;
+  transition: transform 0.1s ease-in-out;
   view-timeline-name: --image;
   view-timeline-axis: block;
   animation-timeline: --image;
@@ -621,15 +623,24 @@ section .section-wrapper .card-wrapper .right img:hover {
   * routes/collections._index.tsx
   * --------------------------------------------------
   */
-.collections-grid {
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
-  margin-bottom: 2rem;
+.collections .hero {
+  padding: 10px 20px;
+  margin-bottom: var(--margin-section-mobile);
+  display: flex;
+  justify-content: start;
 }
-
-.collection-item img {
+.collections div .collections-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
+  margin-bottom: var(--margin-section-desk);
+  align-content: center;
+}
+.collections div .collections-grid .collection-item img {
   height: auto;
+}
+.collections div .collections-grid .collection-item h5 {
+  padding-inline: 10px;
 }
 
 /*
@@ -788,7 +799,7 @@ section .section-wrapper .card-wrapper .right img:hover {
   background: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 60%) var(--color-grey-light);
   background-size: 200% 100%;
   background-position-x: 180%;
-  animation: 1s loading ease-in-out 10s;
+  animation: 1s loading ease-in-out infinite;
 }
 
 @keyframes loading {

@@ -182,7 +182,7 @@ aside li {
     font-family: stinger;
     letter-spacing: 2.5px;
 
-    a{
+    a {
         font-size: 4rem;
     }
 }
@@ -391,6 +391,8 @@ aside li {
     svg {
         color: var(--color-grey-light);
         stroke-width: 1px;
+        width: 25px;
+        height: 25px;
     }
 }
 
@@ -442,30 +444,32 @@ aside li {
         .right {
             padding-right: 3rem;
             transform: translatey(0px);
-	        animation: float 5s ease-in-out infinite;
+            animation: float 5s ease-in-out infinite;
 
             img {
                 max-width: 32.5rem;
                 height: auto;
-                user-select: none; 
+                user-select: none;
             }
         }
     }
 }
 
 @keyframes float {
-	0% {
-        filter: drop-shadow(3px 1px 10px rgba(0,0,0,0.3));
-		transform: translatey(0px);
-	}
-	50% {
-        filter: drop-shadow(3px 25px 10px rgba(0,0,0,0.15));
-		transform: translatey(-15px);
-	}
-	100% {
-        filter: drop-shadow(3px 1px 10px rgba(0,0,0,0.3));
-		transform: translatey(0px);
-	}
+    0% {
+        filter: drop-shadow(3px 1px 10px rgba(0, 0, 0, 0.3));
+        transform: translatey(0px);
+    }
+
+    50% {
+        filter: drop-shadow(3px 25px 10px rgba(0, 0, 0, 0.15));
+        transform: translatey(-15px);
+    }
+
+    100% {
+        filter: drop-shadow(3px 1px 10px rgba(0, 0, 0, 0.3));
+        transform: translatey(0px);
+    }
 }
 
 section {
@@ -601,7 +605,7 @@ section {
                     height: auto;
                     object-fit: cover;
 
-                    transition: transform 0.15s ease-in-out;
+                    transition: transform 0.1s ease-in-out;
                     view-timeline-name: --image;
                     view-timeline-axis: block;
                     animation-timeline: --image;
@@ -670,16 +674,38 @@ section {
   * routes/collections._index.tsx
   * --------------------------------------------------
   */
-.collections-grid {
-    display: grid;
-    grid-gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
-    margin-bottom: 2rem;
+
+.collections {
+
+    .hero {
+        padding: 10px 20px;
+        margin-bottom: var(--margin-section-mobile);
+        display: flex;
+        justify-content: start;
+    }
+
+    div {
+        .collections-grid {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
+            margin-bottom: var(--margin-section-desk);
+            align-content: center;
+
+            .collection-item {
+
+                img {
+                    height: auto;
+                }
+
+                h5 {
+                    padding-inline: 10px;
+                }
+            }
+        }
+    }
 }
 
-.collection-item img {
-    height: auto;
-}
 
 /*
   * --------------------------------------------------
@@ -728,19 +754,20 @@ section {
         }
     }
 
-    .description-large-wrapper{
+    .description-large-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 8rem;
         gap: 50px;
 
-        .left{
+        .left {
             width: min-content;
             display: flex;
-            align-items: center;   
+            align-items: center;
         }
-        .right{
+
+        .right {
             width: fit-content;
             max-width: 600px;
             margin-top: 1.5rem;
@@ -852,7 +879,7 @@ section {
             rgba(255, 255, 255, 0) 60%) var(--color-grey-light);
     background-size: 200% 100%;
     background-position-x: 180%;
-    animation: 1s loading ease-in-out 10s;
+    animation: 1s loading ease-in-out infinite;
 }
 
 @keyframes loading {
