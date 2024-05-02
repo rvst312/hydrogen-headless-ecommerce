@@ -48,7 +48,10 @@ function CloseAside() {
 
   return (
     /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
-    <a className="close" href="javascript:void(0)" onClick={handleClose}>
+    <a className="close" href="#" onClick={(e) => {
+      e.preventDefault(); 
+      handleClose(); 
+    }}>
       <CloseIcon />
     </a>
   );

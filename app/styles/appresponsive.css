@@ -16,6 +16,11 @@
   /* reveal aside */
   /*
   * --------------------------------------------------
+  * components/Header
+  * --------------------------------------------------
+  */
+  /*
+  * --------------------------------------------------
   * components/Footer
   * --------------------------------------------------
   */
@@ -91,6 +96,10 @@
   }
   .featured-collection-image {
     aspect-ratio: 16/9;
+  }
+  .recommended-products {
+    margin-top: var(--margin-section-mobile);
+    margin-bottom: var(--margin-section-mobile);
   }
   .recommended-products .text-bar .text-container {
     padding-top: 2rem;
@@ -181,8 +190,7 @@
   */
   h1 {
     font-size: 3.3rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 0.5rem;
   }
   h2 {
     font-size: 2.5rem;

@@ -52,6 +52,34 @@
 
     /*
   * --------------------------------------------------
+  * components/Header
+  * --------------------------------------------------
+  */
+
+    .logo {}
+
+    .header {}
+
+
+
+    .nav-wrapper {}
+
+    .header-menu-mobile {
+
+        .header-menu-item {
+            
+        }
+    }
+
+
+    .header-menu-desktop {}
+
+    .header-menu-item {}
+
+    .header-ctas {}
+
+    /*
+  * --------------------------------------------------
   * components/Footer
   * --------------------------------------------------
   */
@@ -66,17 +94,17 @@
 
             .footer-menu {
                 flex-direction: column-reverse;
-    
+
                 a {}
             }
 
-            .sm-icons-wrapper{
-               gap: 2rem;
+            .sm-icons-wrapper {
+                gap: 2rem;
             }
         }
 
         .logo-footer {
-            
+
             img {
                 width: 70px;
             }
@@ -174,6 +202,8 @@
     .featured-collection img {}
 
     .recommended-products {
+        margin-top: var(--margin-section-mobile);
+        margin-bottom: var(--margin-section-mobile);
 
         .text-bar {
 
@@ -211,15 +241,15 @@
         gap: 20px;
         padding-inline: 20px;
         padding: 1rem;
-       
-    
+
+
         .icon-wrapper {
 
-            svg{
+            svg {
                 width: 40px;
                 height: 40px;
             }
-            
+
         }
     }
 
@@ -327,8 +357,7 @@
 
     h1 {
         font-size: 3.3rem;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
+        margin-bottom: .5rem;
     }
 
     h2 {
@@ -375,13 +404,28 @@
         font-size: 1.06rem;
         letter-spacing: .08rem;
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Legacy and small mobiles */
 @media only screen and (max-width : 320) {}
-
-
 
 /*
   * --------------------------------------------------
@@ -444,9 +488,7 @@ routes/__index
 
             .left {
 
-                h1 {
-
-                }
+                h1 {}
 
                 p {}
 
