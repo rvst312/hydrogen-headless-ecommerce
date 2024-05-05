@@ -9,7 +9,6 @@ export async function loader({ context, request }) {
   const paginationVariables = getPaginationVariables(request, {
     pageBy: 4,
   });
-
   const { collections } = await context.storefront.query(COLLECTIONS_QUERY, {
     variables: paginationVariables,
   });
@@ -24,7 +23,7 @@ export default function Collections() {
   return (
     <div className="collections">
       <div className="hero">
-        <h1>All Products</h1>
+        <h1>CBD Flowers</h1>
       </div>
       <Pagination connection={collections}>
         {({ nodes, isLoading, PreviousLink, NextLink }) => (

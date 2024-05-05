@@ -112,10 +112,10 @@ export default function App() {
   return (
     <html lang="es">
       <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width,initial-scale=1" />
-          <Meta />
-          <Links />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <Meta />
+        <Links />
       </head>
       <body>
         <Layout {...data}>
@@ -154,13 +154,9 @@ export function ErrorBoundary() {
       <body>
         <Layout {...rootData}>
           <div className="route-error">
-            <h1>Oops</h1>
-            <h2>{errorStatus}</h2>
-            {errorMessage && (
-              <fieldset>
-                <pre>{errorMessage}</pre>
-              </fieldset>
-            )}
+            <img src="https://cdn.shopify.com/s/files/1/0822/2569/3009/files/404_74f8a957-51c6-434b-8af8-5753dd9ebf1c.png?v=1714945946" alt="juicycbd" />
+            <span>{errorStatus}</span>
+            <p>Not found. <a href="/">Go to Home</a> </p>
           </div>
         </Layout>
         <ScrollRestoration nonce={nonce} />

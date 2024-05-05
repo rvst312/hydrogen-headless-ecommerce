@@ -147,6 +147,10 @@ dl {
   margin: 0.5rem 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .primary-button {
   display: none;
 
@@ -158,5 +162,29 @@ dl {
       border-radius: 6.87rem;
       font-size: 1.06rem;
       letter-spacing: .08rem;
+  }
+}
+
+.route-error{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 3rem;
+
+  img{
+    width: 350px;
+  }
+
+  span{
+    font-size: 150px;
+    font-weight: 800;
+  }
+
+  p{
+    a{
+      text-decoration: underline;
+      color: var(--color-red);
+    }
   }
 }

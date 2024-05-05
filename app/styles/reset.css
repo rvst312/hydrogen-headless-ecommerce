@@ -148,6 +148,10 @@ dl {
   margin: 0.5rem 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .primary-button {
   display: none;
 }
@@ -161,4 +165,23 @@ dl {
     font-size: 1.06rem;
     letter-spacing: 0.08rem;
   }
+}
+
+.route-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 3rem;
+}
+.route-error img {
+  width: 350px;
+}
+.route-error span {
+  font-size: 150px;
+  font-weight: 800;
+}
+.route-error p a {
+  text-decoration: underline;
+  color: var(--color-red);
 }
