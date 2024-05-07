@@ -127,6 +127,19 @@ export default function App() {
           `}
         </script>
         {/* Fin del Google Tag Manager */}
+        
+        {/* Google Analytics (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VV6S2PTV5"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-0VV6S2PTV5');
+          `}
+        </script>
+        {/* End of Google Analytics */}
       </head>
       <body>
         {/* Google Tag Manager (noscript) */}
