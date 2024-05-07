@@ -45,17 +45,6 @@ export function HeroHome() {
                         >
                             Go to shop
                         </Link>
-                        <Link
-                            className="primary-button p-button-mobile"
-                            to="/collections"
-                            onClick={() => {
-                                if (layout === 'aside') {
-                                    window.location.href = '/collections';
-                                }
-                            }}
-                        >
-                            Go to shop
-                        </Link>
                     </div>
 
                 </div>
