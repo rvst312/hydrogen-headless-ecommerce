@@ -617,6 +617,9 @@ section .section-wrapper .card-wrapper .right img:hover {
   justify-content: center;
   gap: 1rem;
 }
+.garanties .icon-wrapper svg:hover {
+  transform: scale(1.1);
+}
 
 /*
   * --------------------------------------------------
