@@ -185,6 +185,41 @@
   }
   /*
   * --------------------------------------------------
+  * routes/collections._index.tsx
+  * --------------------------------------------------
+  */
+  .collections .hero {
+    margin-bottom: var(--margin-section-mobile);
+  }
+  .collections div .collections-grid {
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+    margin-bottom: var(--margin-section-mobile);
+    margin-top: var(--margin-section-mobile);
+  }
+  /*
+  * --------------------------------------------------
+  * routes/collections.$handle.tsx
+  * --------------------------------------------------
+  */
+  .collection .hero {
+    margin-bottom: var(--margin-section-mobile);
+  }
+  .collection .products-grid {
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+    margin-top: var(--margin-section-mobile);
+  }
+  .collection .products-grid .product-item .product-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 10px;
+  }
+  .collection .products-grid .product-item .product-info small {
+    color: var(--color-red);
+    font-weight: 800;
+  }
+  /*
+  * --------------------------------------------------
   * reset.scss
   * --------------------------------------------------
   */

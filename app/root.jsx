@@ -18,6 +18,7 @@ import appStyles from './styles/app.css';
 import responsiveStyles from './styles/appresponsive.css'
 import { Layout } from '~/components/Layout';
 
+
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -127,7 +128,7 @@ export default function App() {
           `}
         </script>
         {/* Fin del Google Tag Manager */}
-        
+
         {/* Google Analytics (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VV6S2PTV5"></script>
         <script>
