@@ -17,6 +17,7 @@ import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import responsiveStyles from './styles/appresponsive.css'
 import { Layout } from '~/components/Layout';
+import {GoogleGTM} from '~/components/GoogleGTM';
 
 
 /**
@@ -89,6 +90,8 @@ export async function loader({ context }) {
     },
   });
 
+  const googleGtmID = context.env.PUBLIC_GOOGLE_GTM_ID;
+
   return defer(
     {
       cart: cartPromise,
@@ -96,6 +99,7 @@ export async function loader({ context }) {
       header: await headerPromise,
       isLoggedIn: isLoggedInPromise,
       publicStoreDomain,
+      googleGtmID,
     },
     {
       headers: {
@@ -117,44 +121,15 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
-        {/* Google Tag Manager */}
-        <script>
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-PN8N78VM');
-          `}
-        </script>
-        {/* Fin del Google Tag Manager */}
-
-        {/* Google Analytics (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VV6S2PTV5"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){ dataLayer.push(arguments); }
-            gtag('js', new Date());
-
-            gtag('config', 'G-0VV6S2PTV5');
-          `}
-        </script>
-        {/* End of Google Analytics */}
       </head>
       <body>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN8N78VM"
-            height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <Layout {...data}>
           <Outlet />
         </Layout>
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
         <LiveReload nonce={nonce} />
+        <GoogleGTM id={data.googleGtmID} />
       </body>
     </html>
   );
