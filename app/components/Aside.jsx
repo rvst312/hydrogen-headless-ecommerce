@@ -45,6 +45,7 @@ function CloseAside() {
   {/*const handleClose = () => {
     window.history.go(-1); 
     window.history.replaceState(null, '', window.location.pathname);
+    // window.history.replaceState({}, null, window.location.pathname); // or ({}, "", window.location.pathname) posible corrección safari browser
   };*/}
   const navigate = useNavigate();
 
