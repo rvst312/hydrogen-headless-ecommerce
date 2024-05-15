@@ -17,7 +17,7 @@ import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import responsiveStyles from './styles/appresponsive.css'
 import { Layout } from '~/components/Layout';
-import {GoogleGTM} from '~/components/GoogleGTM';
+import { GoogleGTM } from '~/components/GoogleGTM';
 
 
 /**

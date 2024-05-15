@@ -6,9 +6,6 @@ import {
   SearchIcon,
   CartIcon,
 } from './icons/icon';
-import { SocialMediaIcons } from '../components/icons/SocialMediaIcons'
-
-
 
 /**
  * @param {HeaderProps}
