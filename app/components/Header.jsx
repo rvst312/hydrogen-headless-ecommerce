@@ -14,32 +14,32 @@ export function Header({ header, cart }) {
   const { shop, menu } = header;
   return (
 
-    <header className="header">
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <span>
-          <img className='logo' src="https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Juicy-cbd-logotipo-version-naranja.png?v=1711816712" alt="JUICYCBD" />
-        </span>
-      </NavLink>
-      <div className="nav-wrapper">
-        <HeaderMenu
-          menu={menu}
-          viewport="desktop"
-          primaryDomainUrl={header.shop.primaryDomain.url}
-        />
-        <Link
-          className="primary-button"
-          to="/collections"
-          onClick={() => {
-            if (layout === 'aside') {
-              window.location.href = '/collections';
-            }
-          }}
-        >
-          Shop
-        </Link>
-        <HeaderCtas cart={cart} />
-      </div>
-    </header>
+      <header className="header">
+        <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
+          <span>
+            <img className='logo' src="https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Juicy-cbd-logotipo-version-naranja.png?v=1711816712" alt="JUICYCBD" />
+          </span>
+        </NavLink>
+        <div className="nav-wrapper">
+          <HeaderMenu
+            menu={menu}
+            viewport="desktop"
+            primaryDomainUrl={header.shop.primaryDomain.url}
+          />
+          <Link
+            className="primary-button"
+            to="/collections"
+            onClick={() => {
+              if (layout === 'aside') {
+                window.location.href = '/collections';
+              }
+            }}
+          >
+            Tienda
+          </Link>
+          <HeaderCtas cart={cart} />
+        </div>
+      </header>
   );
 }
 
@@ -58,7 +58,8 @@ export function HeaderMenu({ menu, primaryDomainUrl, viewport }) {
     if (viewport === 'mobile') {
       event.preventDefault();
       window.location.href = event.currentTarget.href;
-      
+      window.location.hash = '';
+
     }
   }
 
