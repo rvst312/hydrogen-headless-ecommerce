@@ -76,7 +76,7 @@ export default function RecommendedProducts({ products, textBar }) {
                         }
                     }}
                 >
-                    Go to shop
+                    Ir a la tienda
                 </Link>
             </div>
         </div >
