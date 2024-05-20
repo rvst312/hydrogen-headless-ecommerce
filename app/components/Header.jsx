@@ -58,6 +58,7 @@ export function HeaderMenu({ menu, primaryDomainUrl, viewport }) {
     if (viewport === 'mobile') {
       event.preventDefault();
       window.location.href = event.currentTarget.href;
+      
     }
   }
 
