@@ -11,8 +11,8 @@ export function HeroHome() {
     ];
 
     const  hero = {
-        h1 : "Shop and Discover CBD",
-        p: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur."
+        h1 : "Compra y descubre el CBD",
+        p: ""
     } 
 
     useEffect(() => {
@@ -35,7 +35,7 @@ export function HeroHome() {
                     </p>
                     <div className="calls">
                         <Link
-                            className="primary-button"
+                            className="primary-button p-button-mobile"
                             to="/collections"
                             onClick={() => {
                                 if (layout === 'aside') {
@@ -62,25 +62,25 @@ export function CardsCategory() {
     const content = [
         {
             title: "Flowers",
-            description: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.",
+            description: "Una selección de las mejores géneticas del mercado cultivadas de la mejor manera. Simplemente deliciosas.",
             imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ORANGE-SHERBET.webp?v=1712411760",
             color: "#FFE6E6",
         },
         {
             title: "Indoor",
-            description: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.",
+            description: "Nuestras genéticas cultivadas en interior con las mejores condiciones. Para lograr una altísima calidad.",
             imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/WEEDINGCAKE.webp?v=1712938190",
             color: "#EAEAEA",
         },
         {
             title: "Cali",
-            description: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.",
+            description: "Aquí solo tenemos lo mejor de lo mejor. Nuestra selección de genéticas pata negra cultivadas en interior e hydroponía.",
             imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ALIEN-FRUIT.webp?v=1712411808",
             color: "#EEFBE0",
         },
         {
             title: "Hydro",
-            description: "Lorem ipsum dolor sit amet consectetur adipiscing elit morbi integer sagittis aliquam tempor purus bibendum eu ut elementum nullam dolerco secter dolor sit amet conseectur.",
+            description: "Atrévete a probar nuestras géneticas de cultivo hydropónico. Un salto en el sabor y apariencia de las flores.",
             imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/AMNESIA.webp?v=1712422235",
             color: "#E8F5FC",
         },

@@ -6,9 +6,6 @@ import {
   SearchIcon,
   CartIcon,
 } from './icons/icon';
-import { SocialMediaIcons } from '../components/icons/SocialMediaIcons'
-
-
 
 /**
  * @param {HeaderProps}
@@ -61,6 +58,7 @@ export function HeaderMenu({ menu, primaryDomainUrl, viewport }) {
     if (viewport === 'mobile') {
       event.preventDefault();
       window.location.href = event.currentTarget.href;
+      
     }
   }
 

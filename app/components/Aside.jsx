@@ -1,4 +1,5 @@
 import { CloseIcon } from './icons/icon';
+import { useNavigate } from "@remix-run/react";
 
 /**
  * A side bar component with Overlay that works without JavaScript.
@@ -15,14 +16,16 @@ import { CloseIcon } from './icons/icon';
  *   id?: string;
  * }}
  */
+
 export function Aside({ children, heading, id = 'aside' }) {
-  
+  const navigate = useNavigate();
+
   return (
     <div aria-modal className="overlay" id={id} role="dialog">
       <button
         className="close-outside"
         onClick={() => {
-          history.go(-1);
+          navigate(-1);
           window.location.hash = '';
         }}
       />
@@ -33,7 +36,7 @@ export function Aside({ children, heading, id = 'aside' }) {
         </header>
         <main>
           {children}
-          <br/>
+          <br />
         </main>
       </aside>
     </div>
@@ -41,19 +44,29 @@ export function Aside({ children, heading, id = 'aside' }) {
 }
 
 function CloseAside() {
-  const handleClose = () => {
+  {/*const handleClose = () => {
     window.history.go(-1); 
     window.history.replaceState(null, '', window.location.pathname);
-  };
+  };*/}
+  const navigate = useNavigate();
 
   return (
-    /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
+    /* eslint-disable-next-line jsx-a11y/anchor-is-valid 
     <a className="close" href="#" onClick={(e) => {
       e.preventDefault(); 
       handleClose(); 
     }}>
       <CloseIcon />
-    </a>
+    </a>*/
+
+    <button
+      className="close"
+      onClick={() => {
+        navigate(-1);
+        window.location.hash = '';
+      }}>
+      <CloseIcon />
+    </button>
   );
 }
 

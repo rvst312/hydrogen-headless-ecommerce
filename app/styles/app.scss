@@ -659,6 +659,7 @@ section {
     align-items: center;
     margin-bottom: var(--margin-section-desk);
     padding: 5rem 3rem;
+    background: var(--color-grey-light);
 
     .icon-wrapper {
         display: flex;
@@ -666,10 +667,47 @@ section {
         align-items: center;
         justify-content: center;
         gap: 1rem;
+        transition: transform 0.5s ease;
 
-        svg:hover{
+        svg:hover {
             transform: scale(1.1);
+            color: #FF0A01;
         }
+    }
+}
+
+.call-to-ig {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--margin-section-desk);
+    margin-bottom: var(--margin-section-desk);
+    gap: 2rem;
+
+    h3 {
+        text-align: center;
+    }
+
+    a {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--color-red);
+    }
+
+    .recomended-photos {
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+
+
+        img {
+            width: 150px;
+            pointer-events: none;
+        }
+
     }
 }
 
@@ -850,6 +888,56 @@ section {
     }
 }
 
+/*
+  * --------------------------------------------------
+  * routes/contact.jsx
+  * --------------------------------------------------
+  */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: var(--margin-section-desk);
+    min-height: 60vh;
+
+    .hero {
+        background: var(--color-grey-light);
+        width: 100%;
+        padding: 3rem;
+        margin: 0;
+
+        h1 {}
+    }
+
+    .contact-wrapper {
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            
+            h2{
+                width: fit-content;
+            }
+
+            div{
+                span{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+        }
+
+        .right {}
+    }
+}
+
 
 /*
   * --------------------------------------------------
@@ -890,6 +978,7 @@ section {
 
 .skeleton-loading {
     background-color: #f5f5f5;
+    width: auto;
     height: auto;
     background-color: var(--color-grey-light);
     background: linear-gradient(100deg,
