@@ -35,6 +35,7 @@ export default function Homepage() {
       <RecommendedProducts products={data.recommendedProducts} textBar="FLOWERS" />
       <RecommendedProducts products={data.recommendedProducts} textBar="PACKS" />
       <GarantyIcons />
+      <CallToIg />
     </div>
   );
 }
@@ -68,6 +69,31 @@ export function GarantyIcons() {
         </span>
       </div>
     </section>
+  );
+}
+
+export function CallToIg() {
+  const ig = {
+    url: "https://www.instagram.com/juicy.hemp/",
+    img_1: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Post_4.png?v=1716231005",
+    img_2: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Post_5.png?v=1716231005",
+    img_3: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Post_3.png?v=1716231006",
+  }
+
+  return (
+    <div className="call-to-ig">
+      <h3>
+        Siguenos en Instagram
+      </h3>
+      <a href={ig.url} target='_blank'>
+        @juicy.hemp
+      </a>
+      <div className="recomended-photos">
+        <img src={ig.img_1} alt="juicy hemp" />
+        <img src={ig.img_2} alt="juicy hemp" />
+        <img src={ig.img_3} alt="juicy hemp" />
+      </div>
+    </div>
   );
 }
 

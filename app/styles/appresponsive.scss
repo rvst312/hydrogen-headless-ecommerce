@@ -238,7 +238,8 @@
         text-align: center;
         gap: 20px;
         padding-inline: 20px;
-        padding: 1rem;
+        padding-top: 100px;
+        padding-bottom: 100px;
 
 
         .icon-wrapper {
@@ -246,6 +247,30 @@
             svg {
                 width: 40px;
                 height: 40px;
+            }
+
+        }
+    }
+
+    .call-to-ig {
+        margin-top: var(--margin-section-mobile);
+        margin-bottom: var(--margin-section-mobile);
+        gap: 1.5rem;
+
+        h3 {}
+
+        a {
+            font-size: 2rem;
+        }
+
+        .recomended-photos {
+            column-gap: 10px;
+            margin-bottom: var(--margin-section-mobile);
+
+
+            img {
+                width: 120px;
+                pointer-events: none;
             }
 
         }
@@ -367,11 +392,9 @@
 
                 .collection-item {
 
-                    img {
-                    }
+                    img {}
 
-                    h5 {
-                    }
+                    h5 {}
                 }
             }
         }
@@ -389,25 +412,24 @@
 
             h1 {}
 
-            .collection-description {
-               
-            }
+            .collection-description {}
         }
 
         .products-grid {
             grid-template-columns: repeat(2, minmax(auto, 1fr));
             margin-top: var(--margin-section-mobile);
 
-            .product-item{
+            .product-item {
 
-                .product-info{
+                .product-info {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    padding-inline: 10px ;
+                    padding-inline: 10px;
 
-                    h4{}
-                    small{
+                    h4 {}
+
+                    small {
                         color: var(--color-red);
                         font-weight: 800;
                     }
@@ -416,9 +438,42 @@
         }
     }
 
+    .product-item img {}
 
-    .product-item img {
+    /*
+  * --------------------------------------------------
+  * routes/contact.jsx
+  * --------------------------------------------------
+  */
+
+    .contact {
+
+        .hero {
+            background: var(--color-grey-light);
+            padding: 0rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            margin: 0;
+
+            h1 {}
+        }
+
+        .contact-wrapper {
+            padding-inline: 10px;
+
+            .left {
+
+                h2 {}
+
+                div {
+                    span {}
+                }
+            }
+
+            .right {}
+        }
     }
+
 
 
     /*

@@ -18,7 +18,7 @@ import appStyles from './styles/app.css';
 import responsiveStyles from './styles/appresponsive.css'
 import { Layout } from '~/components/Layout';
 import { GoogleGTM } from '~/components/GoogleGTM';
-import  PopupForm  from '~/components/PopupForm';
+//import  PopupForm  from '~/components/PopupForm';
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -123,7 +123,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <PopupForm />
+        {/*<PopupForm />*/}
         <Layout {...data}>
           <Outlet />
         </Layout>
