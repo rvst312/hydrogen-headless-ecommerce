@@ -501,6 +501,20 @@ section {
                 p {
                     font-weight: 300;
                 }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    transition: transform 0.5s ease;
+                    margin-top: 10px;
+                    opacity: .6;
+
+                    svg {
+                        &:hover {
+                            transform: translateX(5px);
+                        }
+                    }
+                }
             }
 
             .right {
@@ -920,13 +934,13 @@ section {
         .left {
             display: flex;
             flex-direction: column;
-            
-            h2{
+
+            h2 {
                 width: fit-content;
             }
 
-            div{
-                span{
+            div {
+                span {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;

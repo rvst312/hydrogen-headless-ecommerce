@@ -83,7 +83,7 @@ export function CallToIg() {
   return (
     <div className="call-to-ig">
       <h3>
-        Siguenos en Instagram
+        Síguenos en Instagram
       </h3>
       <a href={ig.url} target='_blank'>
         @juicy.hemp

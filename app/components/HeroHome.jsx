@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from '@remix-run/react';
+import { ArrowRight } from './icons/icon'
 
 export function HeroHome() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,10 +11,10 @@ export function HeroHome() {
         'https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ORANGE-SHERBET.webp?v=1712411760',
     ];
 
-    const  hero = {
-        h1 : "Compra y descubre el CBD",
+    const hero = {
+        h1: "Compra y descubre el CBD",
         p: ""
-    } 
+    }
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -43,7 +44,7 @@ export function HeroHome() {
                                 }
                             }}
                         >
-                            Go to shop
+                            Ir a la tienda
                         </Link>
                     </div>
 
@@ -65,24 +66,28 @@ export function CardsCategory() {
             description: "Una selección de las mejores géneticas del mercado cultivadas de la mejor manera. Simplemente deliciosas.",
             imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ORANGE-SHERBET.webp?v=1712411760",
             color: "#FFE6E6",
+            url: "",
         },
         {
             title: "Indoor",
             description: "Nuestras genéticas cultivadas en interior con las mejores condiciones. Para lograr una altísima calidad.",
             imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/WEEDINGCAKE.webp?v=1712938190",
             color: "#EAEAEA",
+            url: "indoor",
         },
         {
             title: "Cali",
             description: "Aquí solo tenemos lo mejor de lo mejor. Nuestra selección de genéticas pata negra cultivadas en interior e hydroponía.",
             imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/ALIEN-FRUIT.webp?v=1712411808",
             color: "#EEFBE0",
+            url: "cali",
         },
         {
             title: "Hydro",
             description: "Atrévete a probar nuestras géneticas de cultivo hydropónico. Un salto en el sabor y apariencia de las flores.",
             imageUrl: "https://cdn.shopify.com/s/files/1/0822/2569/3009/files/AMNESIA.webp?v=1712422235",
             color: "#E8F5FC",
+            url: "hydro",
         },
     ]
 
@@ -97,6 +102,7 @@ export function CardsCategory() {
                             description={item.description}
                             imageUrl={item.imageUrl}
                             color={item.color}
+                            url={item.url}
                         />
                     ))
                 }
@@ -105,7 +111,7 @@ export function CardsCategory() {
     )
 }
 
-export function Card({ title, description, imageUrl, color }) {
+export function Card({ title, description, imageUrl, color, url }) {
 
     return (
         <div className="card-wrapper" style={{ backgroundColor: color }}>
@@ -116,12 +122,18 @@ export function Card({ title, description, imageUrl, color }) {
                 <p>
                     {description}
                 </p>
+                <a href={"/collections/" + url}>
+                    <span>Ver más</span>
+                    <ArrowRight />
+                </a>
             </div>
             <div className="right">
-                <img
-                    src={imageUrl}
-                    alt={title}
-                />
+                <a href={"/collections/" + url}>
+                    <img
+                        src={imageUrl}
+                        alt={title}
+                    />
+                </a>
             </div>
         </div>
     )
