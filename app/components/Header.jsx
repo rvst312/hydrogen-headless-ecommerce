@@ -59,7 +59,6 @@ export function HeaderMenu({ menu, primaryDomainUrl, viewport }) {
       event.preventDefault();
       window.location.href = event.currentTarget.href;
       window.location.hash = '';
-
     }
   }
 

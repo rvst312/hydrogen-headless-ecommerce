@@ -1,0 +1,202 @@
+/*
+  * --------------------------------------------------
+  * Big Mobile and small tabs
+  * --------------------------------------------------
+*/
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+
+    /*
+  * --------------------------------------------------
+  * components/Aside
+  * --------------------------------------------------
+  */
+
+    aside {
+
+        header {
+
+            .close {
+
+                &:hover {}
+
+                svg {}
+
+            }
+
+            h2 {}
+        }
+
+        main {}
+    }
+
+    aside p {}
+
+    aside p:last-child {}
+
+    aside li {}
+
+    .overlay {}
+
+    .overlay .close-outside {}
+
+    .overlay .light {}
+
+    .overlay .cancel {}
+
+    .overlay:target {}
+
+    /* reveal aside */
+    .overlay:target aside {}
+
+    /*  
+routes/__index  
+*/
+
+    .hero-wrapper {
+
+
+        .content {
+
+            .left {
+
+                h1 {}
+
+                p {}
+
+                .calls {}
+            }
+
+            .right {
+
+
+                img {}
+            }
+        }
+    }
+
+    section {
+
+        .section-wrapper {
+
+
+            .card-wrapper {
+
+                .left {
+
+                    p {}
+                }
+
+                .right {
+
+                    img {
+                        width: 100%;
+
+                        &:hover {}
+                    }
+                }
+            }
+        }
+    }
+
+    .featured-collection {}
+
+    .featured-collection-image {}
+
+    .featured-collection img {}
+
+    .recommended-products {
+
+        .text-bar {
+
+            .text-container {
+
+                .track {}
+
+            }
+        }
+
+        .recommended-products-grid {
+
+            .recommended-product {
+
+                img {}
+
+                .info-prod {
+
+                    small {}
+                }
+            }
+        }
+
+        .calltoaction {}
+    }
+
+    /*
+* --------------------------------------------------
+* routes/products.$handle.tsx
+* --------------------------------------------------
+*/
+
+    .product {}
+
+    .product-image {
+
+        &::-webkit-scrollbar {}
+
+        &::-webkit-scrollbar-thumb {}
+
+        img {}
+    }
+
+    .product-main {
+
+        h1 {}
+
+        .product-price {
+
+            div {}
+        }
+
+        .product-form {
+
+            .product-options {
+
+
+                h5 {}
+            }
+        }
+    }
+
+    .product-price-on-sale {}
+
+    .product-price-on-sale s {}
+
+    .product-options-grid {
+
+        .product-options-item {}
+    }
+
+    /*
+* --------------------------------------------------
+* reset.scss
+* --------------------------------------------------
+*/
+
+    h1 {}
+
+    h2 {}
+
+    h3 {}
+
+    h4 {}
+
+    h5 {}
+
+    h6 {}
+
+    p {}
+
+    .p-button-mobile {}
+
+
+}
