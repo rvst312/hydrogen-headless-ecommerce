@@ -15,7 +15,9 @@ import {
 import favicon from '../public/favicon.svg';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
-import responsiveStyles from './styles/appresponsive.css'
+import responsiveStyles from './styles/appresponsive.css';
+import responsiveSmallStyles from './styles/appresponsivesmall.css';
+import responsiveTabStyles from './styles/appresponsivetab.css';
 import { Layout } from '~/components/Layout';
 import { GoogleGTM } from '~/components/GoogleGTM';
 //import  PopupForm  from '~/components/PopupForm';
@@ -43,6 +45,8 @@ export function links() {
     { rel: 'stylesheet', href: resetStyles },
     { rel: 'stylesheet', href: appStyles },
     { rel: 'stylesheet', href: responsiveStyles },
+    { rel: 'stylesheet', href: responsiveSmallStyles },
+    { rel: 'stylesheet', href: responsiveTabStyles },
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',

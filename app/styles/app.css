@@ -50,6 +50,7 @@ aside header .close {
   text-decoration: none;
   transition: all 200ms;
   width: 20px;
+  background: transparent;
 }
 aside header .close:hover {
   opacity: 1;
@@ -697,6 +698,9 @@ section .section-wrapper .card-wrapper .right img:hover {
   * routes/collections.$handle.tsx
   * --------------------------------------------------
   */
+.collection {
+  margin-bottom: var(--margin-section-desk);
+}
 .collection .hero {
   padding: 50px 3rem;
   background: var(--color-grey-light);
@@ -717,6 +721,16 @@ section .section-wrapper .card-wrapper .right img:hover {
   grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
   margin-top: var(--margin-section-desk);
   margin-bottom: 2rem;
+}
+.collection .products-grid .product-item .product-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 10px;
+}
+.collection .products-grid .product-item .product-info small {
+  color: var(--color-red);
+  font-weight: 800;
 }
 
 .product-item img {

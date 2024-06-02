@@ -52,6 +52,7 @@ aside {
             text-decoration: none;
             transition: all 200ms;
             width: 20px;
+            background: transparent;
 
             &:hover {
                 opacity: 1;
@@ -773,6 +774,7 @@ section {
   */
 
 .collection {
+    margin-bottom: var(--margin-section-desk);
     .hero {
         padding: 50px 3rem;
         background: var(--color-grey-light);
@@ -796,6 +798,23 @@ section {
         grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
         margin-top: var(--margin-section-desk);
         margin-bottom: 2rem;
+
+        .product-item {
+
+            .product-info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-inline: 10px;
+
+                h4 {}
+
+                small {
+                    color: var(--color-red);
+                    font-weight: 800;
+                }
+            }
+        }
     }
 }
 
