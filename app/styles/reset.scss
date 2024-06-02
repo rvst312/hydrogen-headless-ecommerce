@@ -14,13 +14,28 @@
   font-stretch: 120%;
 }
 
+@font-face {
+  font-family: 'Helvetica';
+  src: url('https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Helvetica-regular.ttf?v=1717344108');
+}
+
+@font-face {
+  font-family: 'Helvetica-bold';
+  src: url('https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Helvetica-Bold.ttf?v=1717344108');
+}
+
+@font-face {
+  font-family: 'Helvetica-light';
+  src: url('https://cdn.shopify.com/s/files/1/0822/2569/3009/files/helvetica-light.ttf?v=1717344108');
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: articulat-cf, sans-serif;
+  font-family: Helvetica-light, sans-serif;
 }
 
 h1,
@@ -149,7 +164,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.primary-button {
+.primary-button{
   display: none;
 
   @media (min-width: 58em) {
@@ -163,6 +178,23 @@ html {
   }
 }
 
+.primary-button,
+.p-button-mobile{
+  position: relative;
+
+  &:hover::after {
+    transition: ease-in 5s;
+    content: '';
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    background: inherit;
+    filter: blur(8px) contrast(200%);
+    z-index: -1;
+    opacity: .4;
+  }
+}
 
 .route-error {
   display: flex;
