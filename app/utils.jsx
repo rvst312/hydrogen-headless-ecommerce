@@ -36,5 +36,5 @@ export function usePageAnalytics({hasUserConsent}) {
     return { ...data, hasUserConsent };
   }, [matches]);
 
-  return analyticsFromMatches;
+  return analyticsFromMatches; 
 }

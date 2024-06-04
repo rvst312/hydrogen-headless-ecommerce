@@ -164,6 +164,12 @@ html {
   scroll-behavior: smooth;
 }
 
+input:focus{
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--color-dark);
+}
+
 .primary-button{
   display: none;
 
@@ -181,6 +187,7 @@ html {
 .primary-button,
 .p-button-mobile{
   position: relative;
+  overflow: visible;
 
   &:hover::after {
     transition: ease-in 5s;

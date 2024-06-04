@@ -42,12 +42,12 @@ export function SearchForm({searchTerm}) {
       <input
         defaultValue={searchTerm}
         name="q"
-        placeholder="Search…"
+        placeholder="Buscar..."
         ref={inputRef}
         type="search"
       />
       &nbsp;
-      <button type="submit">Search</button>
+      <button type="submit">Buscar</button>
     </Form>
   );
 }
@@ -108,7 +108,7 @@ export function SearchResults({results, searchTerm}) {
 function SearchResultsProductsGrid({products, searchTerm}) {
   return (
     <div className="search-result">
-      <h2>Products</h2>
+      <h2>Productos</h2>
       <Pagination connection={products}>
         {({nodes, isLoading, NextLink, PreviousLink}) => {
           const ItemsMarkup = nodes.map((product) => {
@@ -144,7 +144,7 @@ function SearchResultsProductsGrid({products, searchTerm}) {
             <div>
               <div>
                 <PreviousLink>
-                  {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
+                  {isLoading ? 'Loading...' : <span>↑ cargar anterior</span>}
                 </PreviousLink>
               </div>
               <div>
@@ -153,7 +153,7 @@ function SearchResultsProductsGrid({products, searchTerm}) {
               </div>
               <div>
                 <NextLink>
-                  {isLoading ? 'Loading...' : <span>Load more ↓</span>}
+                  {isLoading ? 'Loading...' : <span>Cargar más ↓</span>}
                 </NextLink>
               </div>
             </div>
@@ -171,7 +171,7 @@ function SearchResultsProductsGrid({products, searchTerm}) {
 function SearchResultPageGrid({pages}) {
   return (
     <div className="search-result">
-      <h2>Pages</h2>
+      <h2>Páginas</h2>
       <div>
         {pages?.nodes?.map((page) => (
           <div className="search-results-item" key={page.id}>
@@ -192,7 +192,7 @@ function SearchResultPageGrid({pages}) {
 function SearchResultArticleGrid({articles}) {
   return (
     <div className="search-result">
-      <h2>Articles</h2>
+      <h2>Artículos</h2>
       <div>
         {articles?.nodes?.map((article) => (
           <div className="search-results-item" key={article.id}>
@@ -208,7 +208,7 @@ function SearchResultArticleGrid({articles}) {
 }
 
 export function NoSearchResults() {
-  return <p>No results, try a different search.</p>;
+  return <p>No hay resultados, busca otra cosa😔</p>;
 }
 
 /**
@@ -295,7 +295,7 @@ export function PredictiveSearchResults() {
       {searchTerm.current && (
         <Link onClick={goToSearchResult} to={`/search?q=${searchTerm.current}`}>
           <p>
-            View all results for <q>{searchTerm.current}</q>
+            Ver todos los resultados para <q>{searchTerm.current}</q>
             &nbsp; →
           </p>
         </Link>
@@ -315,7 +315,7 @@ function NoPredictiveSearchResults({searchTerm}) {
   }
   return (
     <p>
-      No results found for <q>{searchTerm.current}</q>
+      Ningun resultado encontrado para <q>{searchTerm.current}</q> 
     </p>
   );
 }

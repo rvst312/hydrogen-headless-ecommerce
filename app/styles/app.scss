@@ -92,7 +92,6 @@ aside li {
 
 .overlay {
     background: rgba(0, 0, 0, 0.305);
-    ;
     backdrop-filter: blur(15px);
     bottom: 0;
     left: 0;
@@ -310,6 +309,26 @@ aside li {
 
 .cart-line-quantity {
     display: flex;
+
+    form {
+
+        button {
+            width: 20px;
+            height: 20px;
+            background: var(--color-grey-light);
+            border-radius: 20px;
+            transition: .5s ease-in;
+        }
+
+        button:hover{
+            background: #f8f9fa;
+        }
+
+        .remove-cart-button {
+            width: 80px;
+        }
+
+    }
 }
 
 .cart-discount {
@@ -331,6 +350,23 @@ aside li {
 .predictive-search {
     height: calc(100vh - var(--header-height) - 40px);
     overflow-y: auto;
+
+    form {
+        div {
+            input {
+                padding: 20px;
+                width: 100%;
+                background: var(--color-grey-light);
+                border: none;
+                border-radius: 20px;
+                color: var(--color-grey-medium);
+            }
+
+            button {
+                display: none;
+            }
+        }
+    }
 }
 
 .predictive-search-form {
@@ -561,6 +597,8 @@ section {
     margin-bottom: var(--margin-section-desk);
 
     .calltoaction {
+        overflow: visible;
+        padding: 20px;
         display: flex;
         justify-content: center;
         margin-top: .8rem;
@@ -775,6 +813,7 @@ section {
 
 .collection {
     margin-bottom: var(--margin-section-desk);
+
     .hero {
         padding: 50px 3rem;
         background: var(--color-grey-light);

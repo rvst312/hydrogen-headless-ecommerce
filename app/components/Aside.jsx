@@ -44,21 +44,9 @@ export function Aside({ children, heading, id = 'aside' }) {
 }
 
 function CloseAside() {
-  {/*const handleClose = () => {
-    window.history.go(-1); 
-    window.history.replaceState(null, '', window.location.pathname);
-  };*/}
   const navigate = useNavigate();
 
   return (
-    /* eslint-disable-next-line jsx-a11y/anchor-is-valid 
-    <a className="close" href="#" onClick={(e) => {
-      e.preventDefault(); 
-      handleClose(); 
-    }}>
-      <CloseIcon />
-    </a>*/
-
     <button
       className="close"
       onClick={() => {

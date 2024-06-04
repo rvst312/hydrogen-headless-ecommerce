@@ -292,6 +292,19 @@ aside li {
 .cart-line-quantity {
   display: flex;
 }
+.cart-line-quantity form button {
+  width: 20px;
+  height: 20px;
+  background: var(--color-grey-light);
+  border-radius: 20px;
+  transition: 0.5s ease-in;
+}
+.cart-line-quantity form button:hover {
+  background: #f8f9fa;
+}
+.cart-line-quantity form .remove-cart-button {
+  width: 80px;
+}
 
 .cart-discount {
   align-items: center;
@@ -312,6 +325,17 @@ aside li {
 .predictive-search {
   height: calc(100vh - var(--header-height) - 40px);
   overflow-y: auto;
+}
+.predictive-search form div input {
+  padding: 20px;
+  width: 100%;
+  background: var(--color-grey-light);
+  border: none;
+  border-radius: 20px;
+  color: var(--color-grey-medium);
+}
+.predictive-search form div button {
+  display: none;
 }
 
 .predictive-search-form {
@@ -524,6 +548,8 @@ section .section-wrapper .card-wrapper .right img:hover {
   margin-bottom: var(--margin-section-desk);
 }
 .recommended-products .calltoaction {
+  overflow: visible;
+  padding: 20px;
   display: flex;
   justify-content: center;
   margin-top: 0.8rem;

@@ -16,6 +16,7 @@ export const meta = () => {
  * @param {LoaderFunctionArgs}
  */
 
+
 // Pedimos los datos necesarios
 export async function loader({ context }) {
   const { storefront } = context;
@@ -97,6 +98,7 @@ export function CallToIg() {
   );
 }
 
+// test
 const PRODUCT_WHIT_COLLECTION = `query{
   collection( handle: "packs" ) {
     id
@@ -121,9 +123,10 @@ const PRODUCT_WHIT_COLLECTION = `query{
     }
   }
 }`;
+// end test
 
 
-
+// old query
 const FEATURED_COLLECTION_QUERY = `#graphql
   fragment FeaturedCollection on Collection {
     id
@@ -146,6 +149,7 @@ const FEATURED_COLLECTION_QUERY = `#graphql
     }
   }
 `;
+// end 
 
 const RECOMMENDED_PRODUCTS_QUERY = `#graphql
   fragment RecommendedProduct on Product {
