@@ -3,6 +3,7 @@ import React from 'react';
 import { useLoaderData } from '@remix-run/react';
 import { HeroHome, CardsCategory } from '../components/HeroHome';
 import RecommendedProducts from '../components/RecomendedProducts';
+import RecomProdByCollection from '../components/RecomendedProductsByCollection';
 import { EyeIcon, TruckIcon, LightIcon, TickIcon } from '../components/icons/icon'
 
 /**
@@ -21,8 +22,9 @@ export const meta = () => {
 export async function loader({ context }) {
   const { storefront } = context;
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
+  const productWithCollection = storefront.query(PRODUCT_WHIT_COLLECTION);
 
-  return defer({ recommendedProducts });
+  return defer({ recommendedProducts, productWithCollection });
 }
 
 export default function Homepage() {
@@ -34,7 +36,7 @@ export default function Homepage() {
       <HeroHome />
       <CardsCategory />
       <RecommendedProducts products={data.recommendedProducts} textBar="FLOWERS" />
-      <RecommendedProducts products={data.recommendedProducts} textBar="PACKS" />
+      <RecomProdByCollection products={data.productWithCollection} textBar="PACKS" />
       <GarantyIcons />
       <CallToIg />
     </div>
@@ -98,7 +100,6 @@ export function CallToIg() {
   );
 }
 
-// test
 const PRODUCT_WHIT_COLLECTION = `query{
   collection( handle: "packs" ) {
     id
@@ -114,42 +115,27 @@ const PRODUCT_WHIT_COLLECTION = `query{
         node {
           id
           title
-          featuredImage {
-            id
-            url
+          handle
+          priceRange {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+          images(first: 2) {
+            nodes {
+              id
+              url
+              altText
+              width
+              height
+            }
           }
         }
       }
     }
   }
 }`;
-// end test
-
-
-// old query
-const FEATURED_COLLECTION_QUERY = `#graphql
-  fragment FeaturedCollection on Collection {
-    id
-    title
-    image {
-      id
-      url
-      altText
-      width
-      height
-    }
-    handle
-  }
-  query FeaturedCollection($country: CountryCode, $language: LanguageCode)
-    @inContext(country: $country, language: $language) {
-    collections(first: 1, sortKey: UPDATED_AT, reverse: true) {
-      nodes {
-        ...FeaturedCollection
-      }
-    }
-  }
-`;
-// end 
 
 const RECOMMENDED_PRODUCTS_QUERY = `#graphql
   fragment RecommendedProduct on Product {
@@ -181,6 +167,31 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
     }
   }
 `;
+
+// old query
+const FEATURED_COLLECTION_QUERY = `#graphql
+  fragment FeaturedCollection on Collection {
+    id
+    title
+    image {
+      id
+      url
+      altText
+      width
+      height
+    }
+    handle
+  }
+  query FeaturedCollection($country: CountryCode, $language: LanguageCode)
+    @inContext(country: $country, language: $language) {
+    collections(first: 1, sortKey: UPDATED_AT, reverse: true) {
+      nodes {
+        ...FeaturedCollection
+      }
+    }
+  }
+`;
+// end 
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
 /** @template T @typedef {import('@remix-run/react').MetaFunction<T>} MetaFunction */

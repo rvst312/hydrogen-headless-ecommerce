@@ -16,6 +16,7 @@ export async function loader({ context, request }) {
   return json({ collections });
 }
 
+
 export default function Collections() {
   /** @type {LoaderReturnData} */
   const { collections } = useLoaderData();
@@ -77,6 +78,7 @@ function CollectionItem({ collection, index }) {
         <Image
           alt={collection.image.altText || collection.title}
           aspectRatio="1/1"
+          sizes="(min-width: 45em) 20vw, 50vw"
           data={collection.image}
           loading={index < 3 ? 'eager' : undefined}
         />
@@ -97,6 +99,30 @@ const COLLECTIONS_QUERY = `#graphql
       altText
       width
       height
+    }
+    products(first: 20) {
+      edges {
+        node {
+          id
+          title
+          handle
+          priceRange {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+          images(first: 2) {
+            nodes {
+              id
+              url
+              altText
+              width
+              height
+            }
+          }
+        }
+      }
     }
   }
   query StoreCollections(
