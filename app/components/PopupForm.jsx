@@ -66,7 +66,8 @@ const PopupForm = () => {
       background: '#fff',
       padding: '20px',
       boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
-      width: '40%',
+      width: '80%',
+      maxWidth: '550px',
       height: '40%',
       display: 'flex',
       flexDirection: 'column',
@@ -99,10 +100,10 @@ const PopupForm = () => {
           Debes tener 18 años para acceder
         </p>
         <div style={styles.buttons}>
-          <button className='primary-button' id='si' onClick={handleYesClick}>
+          <button className='primary-button p-button-mobile' id='si' onClick={handleYesClick}>
             Sí
           </button>
-          <button className='primary-button' id='no' onClick={handleNoClick}>
+          <button className='primary-button p-button-mobile' id='no' onClick={handleNoClick}>
             No
           </button>
         </div>
