@@ -15,6 +15,8 @@ export default async function handleRequest(
   responseHeaders,
   remixContext,
 ) {
+
+  // Create the Content Security Policy
   const {nonce, header, NonceProvider} = createContentSecurityPolicy();
 
   const body = await renderToReadableStream(

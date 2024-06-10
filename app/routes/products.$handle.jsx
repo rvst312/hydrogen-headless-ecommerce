@@ -8,6 +8,7 @@ import {
   VariantSelector,
   getSelectedProductOptions,
   CartForm,
+  Analytics
 } from '@shopify/hydrogen';
 import { getVariantUrl } from '~/lib/variants';
 
