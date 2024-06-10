@@ -1,4 +1,8 @@
-import { useNonce } from '@shopify/hydrogen';
+import {
+  useNonce,
+  getShopAnalytics,
+  Analytics,
+} from '@shopify/hydrogen';
 import { defer } from '@shopify/remix-oxygen';
 import {
   Links,
@@ -24,6 +28,7 @@ import PopupForm from '~/components/PopupForm';
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
 import CookieConsent from '~/components/CookieConsent';
+//import { ThirdPartyAnalyticsIntegration } from '~/components/ThirdPartyAnalyticsIntegration';
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -75,7 +80,7 @@ export const useRootLoaderData = () => {
  * @param {LoaderFunctionArgs}
  */
 export async function loader({ context }) {
-  const { storefront, customerAccount, cart } = context;
+  const { storefront, customerAccount, cart, env } = context;
   const publicStoreDomain = context.env.PUBLIC_STORE_DOMAIN;
 
   const isLoggedInPromise = customerAccount.isLoggedIn();
@@ -107,6 +112,14 @@ export async function loader({ context }) {
       isLoggedIn: isLoggedInPromise,
       publicStoreDomain,
       googleGtmID,
+      shop: getShopAnalytics({
+        storefront,
+        publicStorefrontId: env.PUBLIC_STOREFRONT_ID
+      }),
+      consent: {
+        checkoutDomain: env.PUBLIC_CHECKOUT_DOMAIN,
+        storefrontAccessToken: env.PUBLIC_STOREFRONT_API_TOKEN,
+      },
     },
     {
       headers: {
@@ -131,11 +144,19 @@ export default function App() {
       </head>
       <body>
         <Theme>
-          <PopupForm />
-          <Layout {...data}>
-            <Outlet />
-            <CookieConsent />
-          </Layout>
+          <Analytics.Provider
+            cart={data.cart}
+            shop={data.shop}
+            consent={data.consent}
+            customData={{ foo: 'bar' }}
+          >
+            <PopupForm />
+            <Layout {...data}>
+              <Outlet />
+              <CookieConsent />
+            </Layout>
+            {/*<ThirdPartyAnalyticsIntegration />*/}
+          </Analytics.Provider>
           <ScrollRestoration nonce={nonce} />
           <Scripts nonce={nonce} />
           <LiveReload nonce={nonce} />
