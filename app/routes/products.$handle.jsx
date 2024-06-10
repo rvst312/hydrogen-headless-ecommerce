@@ -118,7 +118,7 @@ export default function Product() {
           variants={variants}
         />
       </div>
-      <DescriptionLarge />
+      <DescriptionLarge h2="Solo Flores cultivadas en Interior e Hydroponia" p="El proceso de cultivo es fundamental para tener un producto de buena calidad. En juicy apostamos por traer solo calidades premiun, de cultivos profesionales en interior e hydroponia a un precio justo."/>
     </div>
   );
 }
@@ -334,19 +334,15 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
   );
 }
 
-function DescriptionLarge() {
-  const description_large = {
-    h2: "Description Large",
-    p: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda temporibus quod quisquam accusamus reiciendis, iste odit saepe, facilis quibusdam accusantium voluptas totam modi architecto doloribus ipsa rerum quasi enim. Praesentium."
-  }
+function DescriptionLarge(props) {
 
   return (
     <div className="description-large-wrapper">
       <div className="left">
-        <h3>{description_large.h2}</h3>
+        <h3>{props.h2}</h3>
       </div>
       <div className="right">
-        <p>{description_large.p}</p>
+        <p>{props.p}</p>
       </div>
     </div>
   );

@@ -10,9 +10,9 @@ import { Suspense } from 'react';
  * }}
  */
 
-export default function RecommendedProducts({ products, textBar }) {
+export default function RecomProdByCollection({ products, textBar }) {
 
-    // Contenído que muestra la barra de texto
+    // Text Bar
     const flowers = Array(20).fill(textBar);
     const bar_content = flowers.join(" · ");
 
@@ -30,43 +30,44 @@ export default function RecommendedProducts({ products, textBar }) {
                 </div>
             </div>
 
-            {/* Charge Estate */}
+            {/* Skeleton loading */}
             <Suspense fallback={
-                <div className='skeleton-loading'></div>
+                <div className='skeleton-loading'>skeleton loading</div>
             }>
+
                 <Await resolve={products}>
-                    {({ products }) => (
+                    {({ collection }) => (
                         <div className="recommended-products-grid">
-                            {products.nodes.map((product) => (
+                            {collection.products.edges.map((product) => (
                                 <Link
-                                    key={product.id}
+                                    key={product.node.id}
                                     className="recommended-product"
-                                    to={`/products/${product.handle}`}
+                                    to={`/products/${product.node.handle}`}
                                 >
                                     <div className="image-wrapper">
                                         <Image
-                                            data={product.images.nodes[1] ?? product.images.nodes[0]}
+                                            data={product.node.images.nodes[1] ?? product.node.images.nodes[0]}
                                             aspectRatio="1/1"
-                                            alt={product.images.nodes.altText}
-                                            width={product.images.nodes.width}
-                                            height={product.images.nodes.height}
+                                            alt={product.node.images.altText}
+                                            width={product.node.images.width}
+                                            height={product.node.images.height}
                                             sizes="(min-width: 45em) 20vw, 50vw"
                                             className="default-image"
                                         />
                                         <Image
-                                            data={product.images.nodes[0]}
+                                            data={product.node.images.nodes[0]}
                                             aspectRatio="1/1"
-                                            alt={product.images.nodes.altText}
-                                            width={product.images.nodes.width}
-                                            height={product.images.nodes.height}
+                                            alt={product.node.images.altText}
+                                            width={product.node.images.width}
+                                            height={product.node.images.height}
                                             sizes="(min-width: 45em) 20vw, 50vw"
                                             className="hover-image"
                                         />
                                     </div>
                                     <div className="info-prod">
-                                        <h4>{product.title}</h4>
+                                        <h4>{product.node.title}</h4>
                                         <small>
-                                            <Money data={product.priceRange.minVariantPrice} />
+                                            <Money data={product.node.priceRange.minVariantPrice} />
                                         </small>
                                     </div>
                                 </Link>
@@ -75,6 +76,7 @@ export default function RecommendedProducts({ products, textBar }) {
                     )}
                 </Await>
             </Suspense>
+
             <div className="calltoaction">
                 <Link
                     className="primary-button p-button-mobile"

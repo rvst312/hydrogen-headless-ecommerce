@@ -1,0 +1,15 @@
+
+export default function RecommendedProducts({ products, textBar }) {
+
+    // Contenído que muestra la barra de texto
+    const flowers = Array(20).fill(textBar);
+    const bar_content = flowers.join(" · ");
+
+    return (
+        <div className="recommended-products">
+            <div className="text-bar">
+                <div className="text-container">
+                    <div className="track">
+                        <div className="content">
+           
+</style>
