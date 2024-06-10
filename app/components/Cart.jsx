@@ -1,6 +1,8 @@
 import { CartForm, Image, Money } from '@shopify/hydrogen';
 import { Link } from '@remix-run/react';
 import { useVariantUrl } from '~/lib/variants';
+import { Trash } from './icons/icon';
+import { TextField } from '@radix-ui/themes';
 
 /**
  * @param {CartMainProps}
@@ -123,7 +125,9 @@ function CartCheckoutActions({ checkoutUrl }) {
   return (
     <div>
       <a href={checkoutUrl} target="_self">
-        <p>Continue to Checkout &rarr;</p>
+        <button className='primary-button p-button-mobile'>
+          Finalizar la Compra&rarr;
+        </button>
       </a>
       <br />
     </div>
@@ -143,17 +147,18 @@ export function CartSummary({ cost, layout, children = null }) {
 
   return (
     <div aria-labelledby="cart-summary" className={className}>
-      <h4>Total</h4>
-      <dl className="cart-subtotal">
-        <dt>Subtotal</dt>
-        <dd>
-          {cost?.subtotalAmount?.amount ? (
-            <Money data={cost?.subtotalAmount} />
-          ) : (
-            '-'
-          )}
-        </dd>
-      </dl>
+      <div className="total">
+        <h4>Total</h4>
+        <dl className="cart-subtotal">
+          <dd>
+            {cost?.subtotalAmount?.amount ? (
+              <Money data={cost?.subtotalAmount} />
+            ) : (
+              '-'
+            )}
+          </dd>
+        </dl>
+      </div>
       {children}
     </div>
   );
@@ -169,7 +174,9 @@ function CartLineRemoveButton({ lineIds }) {
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{ lineIds }}
     >
-      <button type="submit" className='remove-cart-button'>Borrar</button>
+      <button type="submit" className='remove-cart-button'>
+        <Trash />
+      </button>
     </CartForm>
   );
 }
@@ -185,7 +192,7 @@ function CartLineQuantity({ line }) {
 
   return (
     <div className="cart-line-quantity">
-      <small>Quantity: {quantity} &nbsp;&nbsp;</small>
+      <small>Cantidad: {quantity} &nbsp;&nbsp;</small>
       <CartLineUpdateButton lines={[{ id: lineId, quantity: prevQuantity }]}>
         <button
           aria-label="Decrease quantity"
@@ -233,7 +240,7 @@ function CartLinePrice({ line, priceType = 'regular', ...passthroughProps }) {
 
   return (
     <div>
-        <Money withoutTrailingZeros {...passthroughProps} data={moneyV2} />
+      <Money withoutTrailingZeros {...passthroughProps} data={moneyV2} />
     </div>
   );
 }
@@ -287,7 +294,9 @@ function CartDiscounts({ discountCodes }) {
             <div className="cart-discount">
               <code>{codes?.join(', ')}</code>
               &nbsp;
-              <button>Borrar</button>
+              <button>
+
+              </button>
             </div>
           </UpdateDiscountForm>
         </div>
@@ -296,9 +305,9 @@ function CartDiscounts({ discountCodes }) {
       {/* Show an input to apply a discount */}
       <UpdateDiscountForm discountCodes={codes}>
         <div>
-          <input type="text" name="discountCode" placeholder="Código de descuento" />
+          <input className='input-discount' type="text" name="discountCode" placeholder="Código de descuento" />
           &nbsp;
-          <button type="submit">Aplicar</button>
+          <button className='secondary-button' type="submit">Aplicar</button>
         </div>
       </UpdateDiscountForm>
     </div>

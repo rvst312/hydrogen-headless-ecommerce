@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const PopupForm = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     const isAgeVerified = localStorage.getItem('ageVerified');
@@ -11,7 +12,6 @@ const PopupForm = () => {
   }, []);
 
   useEffect(() => {
-    // Evitar que la ventana emergente se cierre
     const preventClose = (e) => {
       e.preventDefault();
       e.returnValue = '';
@@ -29,16 +29,24 @@ const PopupForm = () => {
 
   const handleYesClick = () => {
     localStorage.setItem('ageVerified', 'true');
-    setIsOpen(false);
+    triggerClose();
   };
 
   const handleNoClick = () => {
     alert('Debes tener 18 años para acceder');
   };
 
+  const triggerClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false);
+    }, 300); 
+  };
+
   const styles = {
     popupContainer: {
-      background:' rgba(0, 0, 0, 0.305)',
+      background: 'rgba(0, 0, 0, 0.305)',
       backdropFilter: 'blur(15px)',
       position: 'fixed',
       top: 0,
@@ -51,16 +59,20 @@ const PopupForm = () => {
       zIndex: 1000,
       display: isOpen ? 'flex' : 'none'
     },
+    image: {
+      width: '300px',
+    },
     popupContent: {
       background: '#fff',
       padding: '20px',
       boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
-      width: '50%',
-      height: '50%',
+      width: '40%',
+      height: '40%',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      animation: isClosing ? 'scale-down-center 0.3s' : 'none',
     },
     logo: {
       marginBottom: '20px'
@@ -78,11 +90,11 @@ const PopupForm = () => {
     <div style={styles.popupContainer}>
       <div style={styles.popupContent}>
         <div style={styles.logo}>
-          <img src="" alt="" />
+          <img style={styles.image} src="https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Juicy-cbd-logotipo-version-naranja.png?v=1711816712" alt="JUICYCBD" />
         </div>
-        <h1>
+        <h2>
           Verificación de edad
-        </h1>
+        </h2>
         <p>
           Debes tener 18 años para acceder
         </p>

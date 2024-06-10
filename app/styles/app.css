@@ -282,11 +282,29 @@ aside li {
 
 .cart-summary-aside {
   background: white;
-  border-top: 1px solid var(--color-dark);
-  bottom: 0;
+  border-top: 1px solid var(--color-grey-light);
   padding-top: 0.75rem;
+  bottom: 0;
   position: absolute;
   width: calc(var(--aside-width) - 40px);
+  margin-bottom: 1.5rem;
+}
+.cart-summary-aside .total {
+  display: flex;
+  align-items: canter;
+  gap: 10px;
+}
+.cart-summary-aside .total dl > dd {
+  margin-top: 6px;
+  font-weight: 800;
+  color: var(--color-red);
+}
+.cart-summary-aside .input-discount {
+  width: 100px;
+  height: 15px;
+  font-size: 10px;
+  border-radius: 0;
+  margin-left: 0.6rem;
 }
 
 .cart-line-quantity {
@@ -303,7 +321,7 @@ aside li {
   background: #f8f9fa;
 }
 .cart-line-quantity form .remove-cart-button {
-  width: 80px;
+  background: none;
 }
 
 .cart-discount {
@@ -588,7 +606,6 @@ section .section-wrapper .card-wrapper .right img:hover {
 }
 .recommended-products .recommended-products-grid {
   display: grid;
-  grid-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
 }
 @media (min-width: 45em) {
@@ -633,12 +650,13 @@ section .section-wrapper .card-wrapper .right img:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 10px;
+  padding-inline: 15px;
 }
 .recommended-products .recommended-products-grid .recommended-product .info-prod small {
   color: var(--color-red);
   font-weight: 800;
   font-size: 1rem;
+  margin-top: 5px;
 }
 
 .garanties {
@@ -784,13 +802,11 @@ section .section-wrapper .card-wrapper .right img:hover {
 .product-wrapper .description-large-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 8rem;
+  justify-content: space-around;
+  padding: 3rem;
   gap: 50px;
 }
 .product-wrapper .description-large-wrapper .left {
-  width: -moz-min-content;
-  width: min-content;
   display: flex;
   align-items: center;
 }
@@ -810,6 +826,8 @@ section .section-wrapper .card-wrapper .right img:hover {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
 
 .product-main {

@@ -20,7 +20,10 @@ import responsiveSmallStyles from './styles/appresponsivesmall.css';
 import responsiveTabStyles from './styles/appresponsivetab.css';
 import { Layout } from '~/components/Layout';
 import { GoogleGTM } from '~/components/GoogleGTM';
-import  PopupForm  from '~/components/PopupForm';
+import PopupForm from '~/components/PopupForm';
+import '@radix-ui/themes/styles.css';
+import { Theme } from '@radix-ui/themes';
+import CookieConsent from '~/components/CookieConsent';
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -127,14 +130,17 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <PopupForm />
-        <Layout {...data}>
-          <Outlet />
-        </Layout>
-        <ScrollRestoration nonce={nonce} />
-        <Scripts nonce={nonce} />
-        <LiveReload nonce={nonce} />
-        <GoogleGTM id={data.googleGtmID} />
+        <Theme>
+          <PopupForm />
+          <Layout {...data}>
+            <Outlet />
+            <CookieConsent />
+          </Layout>
+          <ScrollRestoration nonce={nonce} />
+          <Scripts nonce={nonce} />
+          <LiveReload nonce={nonce} />
+          <GoogleGTM id={data.googleGtmID} />
+        </Theme>
       </body>
     </html>
   );
