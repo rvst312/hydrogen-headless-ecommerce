@@ -28,7 +28,7 @@ import PopupForm from '~/components/PopupForm';
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
 import CookieConsent from '~/components/CookieConsent';
-//import { ThirdPartyAnalyticsIntegration } from '~/components/ThirdPartyAnalyticsIntegration';
+//import { ThirdPartyAnalyticsIntegration } from '~/components/ThirdPartyAnalyticsIntegration'; 3ds analytics
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
