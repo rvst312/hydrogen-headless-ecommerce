@@ -69,6 +69,9 @@ export default function SearchPage() {
           searchTerm={searchTerm}
         />
       )}
+      <Analytics.SearchView
+        data={{searchTerm, searchResults}}
+      />
     </div>
   );
 }

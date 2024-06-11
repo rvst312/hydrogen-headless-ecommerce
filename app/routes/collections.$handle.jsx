@@ -5,6 +5,7 @@ import {
   getPaginationVariables,
   Image,
   Money,
+  Analytics,
 } from '@shopify/hydrogen';
 import { useVariantUrl } from '~/lib/variants';
 
@@ -65,6 +66,14 @@ export default function Collection() {
           </>
         )}
       </Pagination>
+      <Analytics.CollectionView
+        data={{
+          collection: {
+            id: collection.id,
+            handle: collection.handle,
+          },
+        }}
+      />
     </div>
   );
 }
@@ -97,7 +106,6 @@ function ProductsGrid({ products }) {
 function ProductItem({ product, loading }) {
   const variant = product.variants.nodes[0];
   const variantUrl = useVariantUrl(product.handle, variant.selectedOptions);
-  console.log(product)
   return (
     <Link
       className="product-item"
