@@ -102,6 +102,7 @@ export default function Cart() {
           }}
         </Await>
       </Suspense>
+      <Analytics.CartView />
     </div>
   );
 }

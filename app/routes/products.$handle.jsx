@@ -8,7 +8,8 @@ import {
   VariantSelector,
   getSelectedProductOptions,
   CartForm,
-  Analytics
+  Analytics,
+  useAnalytics,
 } from '@shopify/hydrogen';
 import { getVariantUrl } from '~/lib/variants';
 
@@ -118,6 +119,21 @@ export default function Product() {
           product={product}
           variants={variants}
         />
+        <Analytics.ProductView
+        data={{
+          products: [
+            {
+              id: product.id,
+              title: product.title,
+              price: selectedVariant?.price.amount || '0',
+              vendor: product.vendor,
+              variantId: selectedVariant?.id || '',
+              variantTitle: selectedVariant?.title || '',
+              quantity: 1,
+            },
+          ],
+        }}
+      />
       </div>
       <DescriptionLarge h2="Solo Flores cultivadas en Interior e Hydroponia" p="El proceso de cultivo es fundamental para tener un producto de buena calidad. En juicy apostamos por traer solo calidades premiun, de cultivos profesionales en interior e hydroponia a un precio justo."/>
     </div>
@@ -198,8 +214,6 @@ function ProductMain({ selectedVariant, product, variants }) {
         </Await>
       </Suspense>
       <br />
-
-
     </div>
   );
 }

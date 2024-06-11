@@ -1,4 +1,4 @@
-# Hydrogen template: Skeleton
+# Hydrogen ecommerce
 
 Hydrogen is Shopify’s stack for headless commerce. Hydrogen is designed to dovetail with [Remix](https://remix.run/), Shopify’s full stack web framework. This template contains a **minimal setup** of components, queries and tooling to get started with Hydrogen.
 
@@ -72,15 +72,3 @@ Modify your `/app/entry.server.tsx` to allow the ngrok domain as a connect-src
 +   ],
 + });
 ```
-
-### Prepare Environment variables
-
-Run [`npx shopify hydrogen link`](https://shopify.dev/docs/custom-storefronts/hydrogen/cli#link) or [`npx shopify hydrogen env pull`](https://shopify.dev/docs/custom-storefronts/hydrogen/cli#env-pull) to link this app to your own test shop.
-
-Alternately, the values of the required environment variables "PUBLIC_CUSTOMER_ACCOUNT_API_CLIENT_ID" and "PUBLIC_CUSTOMER_ACCOUNT_API_URL" can be found in customer account api settings in the Hydrogen admin channel.
-
-> [!IMPORTANT]
-> Note that `mock.shop` doesn't supply these variables automatically and your own test shop is required for using Customer Account API
-
-> [!NOTE]
-> B2B features such as contextual pricing is not available in SF API with Customer Account API login. If you require this feature, we suggest using the [legacy-customer-account-flow](https://github.com/Shopify/hydrogen/tree/main/examples/legacy-customer-account-flow). This feature should be available in the Customer Account API in the 2024-04 release.
