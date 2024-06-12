@@ -21,8 +21,14 @@ export const meta = () => {
 // Pedimos los datos necesarios
 export async function loader({ context }) {
   const { storefront } = context;
+
+  const handle = "indoor";
+  const variables = { handle };
+
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
-  const productWithCollection = storefront.query(PRODUCT_WHIT_COLLECTION);
+  const productWithCollection = await storefront.query(PRODUCT_WITH_COLLECTION, {
+    variables,
+  });
 
   return defer({ recommendedProducts, productWithCollection });
 }
@@ -36,7 +42,7 @@ export default function Homepage() {
       <HeroHome />
       <CardsCategory />
       <RecommendedProducts products={data.recommendedProducts} textBar="FLORES CBD" />
-      <RecomProdByCollection products={data.productWithCollection} textBar="PACKS" />
+      <RecomProdByCollection products={data.productWithCollection} textBar="INDOOR CBD" />
       <GarantyIcons />
       <CallToIg />
     </div>
@@ -100,8 +106,8 @@ export function CallToIg() {
   );
 }
 
-const PRODUCT_WHIT_COLLECTION = `query{
-  collection( handle: "packs" ) {
+const PRODUCT_WITH_COLLECTION = `query($handle: String!) {
+  collection(handle: $handle) {
     id
     handle
     title
