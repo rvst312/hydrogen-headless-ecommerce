@@ -28,6 +28,7 @@ import PopupForm from '~/components/PopupForm';
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
 import CookieConsent from '~/components/CookieConsent';
+import WhatsAppButton from '~/components/WhatsappFloatIcon';
 //import { ThirdPartyAnalyticsIntegration } from '~/components/ThirdPartyAnalyticsIntegration'; 3ds analytics
 
 /**
@@ -154,6 +155,7 @@ export default function App() {
             <Layout {...data}>
               <Outlet />
               <CookieConsent />
+              <WhatsAppButton phoneNumber="+34611674140" message="Hola" />
             </Layout>
             {/*<ThirdPartyAnalyticsIntegration />*/}
           </Analytics.Provider>
