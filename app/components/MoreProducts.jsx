@@ -1,37 +1,19 @@
-
-import React from 'react';
-import { Await, Link } from '@remix-run/react';
-import { Image, Money } from '@shopify/hydrogen';
-import { Suspense } from 'react';
+import React from "react";
+import { Await, Link } from "@remix-run/react";
+import { Image, Money } from "@shopify/hydrogen";
+import { Suspense } from "react";
 
 /**
  * @param {{
- *   products: Promise<RecommendedProductsQuery>;
+ *    products: Promise<RecomendedProductsQuery>;
  * }}
  */
 
-export default function RecommendedProducts({ products, textBar }) {
-
-    // Contenído que muestra la barra de texto
-    const flowers = textBar ? Array(20).fill(textBar) : [];
-    const bar_content = flowers.join(" · ");
+export default function MoreProducts({ products, title }) {
 
     return (
         <div className="recommended-products">
-            {textBar && (
-                <div className="text-bar">
-                    <div className="text-container">
-                        <div className="track">
-                            <div className="content">
-                                <h2>
-                                    {bar_content}
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
-
+        <h3>{title}</h3>
             {/* Charge Estate */}
             <Suspense fallback={
                 <div className='skeleton-loading'></div>
@@ -39,7 +21,7 @@ export default function RecommendedProducts({ products, textBar }) {
                 <Await resolve={products}>
                     {({ products }) => (
                         <div className="recommended-products-grid">
-                            {products.nodes.map((product) => (
+                            {products.nodes.slice(0, 4).map((product) => (
                                 <Link
                                     key={product.id}
                                     className="recommended-product"
@@ -77,20 +59,6 @@ export default function RecommendedProducts({ products, textBar }) {
                     )}
                 </Await>
             </Suspense>
-            <div className="calltoaction">
-                <Link
-                    className="primary-button p-button-mobile"
-                    to="/collections"
-                    onClick={() => {
-                        if (layout === 'aside') {
-                            window.location.href = '/collections';
-                        }
-                    }}
-                >
-                    Ir a la tienda
-                </Link>
-            </div>
-        </div >
-    );
+        </div>
+    )
 }
-

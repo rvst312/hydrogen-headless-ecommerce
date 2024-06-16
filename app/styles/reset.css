@@ -1,6 +1,7 @@
 :root {
   --color-dark: #0f0f0f;
   --color-red: #FF0A01;
+  --color-red-hover: #dc0902;
   --color-gray-light: #EAEAEA;
   --color-gray-medium: #A6A6A6;
   --color-gray-dark: #595959;
@@ -15,15 +16,15 @@
 }
 @font-face {
   font-family: "Helvetica";
-  src: url("https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Helvetica-regular.ttf?v=1717344108");
+  src: url("https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Helvetica-regular.ttf?v=1717344108") format("truetype");
 }
 @font-face {
   font-family: "Helvetica-bold";
-  src: url("https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Helvetica-Bold.ttf?v=1717344108");
+  src: url("https://cdn.shopify.com/s/files/1/0822/2569/3009/files/Helvetica-Bold.ttf?v=1717344108") format("truetype");
 }
 @font-face {
   font-family: "Helvetica-light";
-  src: url("https://cdn.shopify.com/s/files/1/0822/2569/3009/files/helvetica-light.ttf?v=1717344108");
+  src: url("https://cdn.shopify.com/s/files/1/0822/2569/3009/files/helvetica-light.ttf?v=1717344108") format("truetype");
 }
 * {
   margin: 0;
@@ -38,8 +39,6 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6,
 .primary-button {
   font-family: Stinger, sans-serif;
 }
@@ -185,21 +184,12 @@ input:focus {
 
 .primary-button,
 .p-button-mobile {
-  position: relative;
-  overflow: visible;
+  border: 1px solid var(--color-red);
+  transition: ease-in;
 }
-.primary-button:hover::after,
-.p-button-mobile:hover::after {
-  transition: ease-in 5s;
-  content: "";
-  width: 100%;
-  height: 100%;
-  inset: 0;
-  position: absolute;
-  background: inherit;
-  filter: blur(8px) contrast(200%);
-  z-index: -1;
-  opacity: 0.4;
+.primary-button:hover,
+.p-button-mobile:hover {
+  background: var(--color-red-hover);
 }
 
 .secondary-button {

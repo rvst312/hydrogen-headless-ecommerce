@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { CartForm, Image, Money } from '@shopify/hydrogen';
 import { Link } from '@remix-run/react';
 import { useVariantUrl } from '~/lib/variants';
@@ -275,14 +276,26 @@ export function CartEmpty({ hidden = false, layout = 'aside' }) {
 
 /**
  * @param {{
- *   discountCodes: CartApiQueryFragment['discountCodes'];
- * }}
- */
+*   discountCodes: CartApiQueryFragment['discountCodes'];
+* }}
+*/
 function CartDiscounts({ discountCodes }) {
+  const [showInput, setShowInput] = useState(false);
+
   const codes =
     discountCodes
       ?.filter((discount) => discount.applicable)
       ?.map(({ code }) => code) || [];
+
+  const styles = {
+    discountButton: {
+      background: 'none',
+      border: 'none',
+      padding: '.8rem',
+      textDecoration: 'underline',
+    }
+
+  }
 
   return (
     <div>
@@ -295,21 +308,33 @@ function CartDiscounts({ discountCodes }) {
               <code>{codes?.join(', ')}</code>
               &nbsp;
               <button>
-
+                {/* Botón para eliminar el descuento */}
               </button>
             </div>
           </UpdateDiscountForm>
         </div>
       </dl>
 
-      {/* Show an input to apply a discount */}
-      <UpdateDiscountForm discountCodes={codes}>
-        <div>
-          <input className='input-discount' type="text" name="discountCode" placeholder="Código de descuento" />
-          &nbsp;
-          <button className='secondary-button' type="submit">Aplicar</button>
-        </div>
-      </UpdateDiscountForm>
+      <div>
+        {!showInput && (
+          <button
+            style={styles.discountButton}
+            onClick={() => setShowInput(true)}
+          >
+            Aplicar código de descuento
+          </button>
+        )}
+
+        {showInput && (
+          <UpdateDiscountForm discountCodes={codes}>
+            <div>
+              <input className='input-discount' type="text" name="discountCode" placeholder="Código de descuento" />
+              &nbsp;
+              <button className='secondary-button' type="submit">Aplicar</button>
+            </div>
+          </UpdateDiscountForm>
+        )}
+      </div>
     </div>
   );
 }

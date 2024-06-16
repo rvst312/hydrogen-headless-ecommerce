@@ -12,6 +12,7 @@ import {
   useAnalytics,
 } from '@shopify/hydrogen';
 import { getVariantUrl } from '~/lib/variants';
+import MoreProducts from '~/components/MoreProducts';
 
 /**
  * @type {MetaFunction<typeof loader>}
@@ -26,6 +27,7 @@ export const meta = ({ data }) => {
 export async function loader({ params, request, context }) {
   const { handle } = params;
   const { storefront } = context;
+  const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY_INDEX);
 
   const selectedOptions = getSelectedProductOptions(request).filter(
     (option) =>
@@ -78,7 +80,7 @@ export async function loader({ params, request, context }) {
     variables: { handle },
   });
 
-  return defer({ product, variants });
+  return defer({ product, variants, recommendedProducts });
 }
 
 /**
@@ -106,9 +108,8 @@ function redirectToFirstVariant({ product, request }) {
 
 export default function Product() {
   /** @type {LoaderReturnData} */
-  const { product, variants } = useLoaderData();
+  const { recommendedProducts, product, variants } = useLoaderData();
   const { selectedVariant } = product;
-  //console.log(product)
 
   return (
     <div className="product-wrapper">
@@ -136,6 +137,7 @@ export default function Product() {
       />
       </div>
       <DescriptionLarge h2="Solo Flores cultivadas en Interior e Hydroponia" p="El proceso de cultivo es fundamental para tener un producto de buena calidad. En juicy apostamos por traer solo calidades premiun, de cultivos profesionales en interior e hydroponia a un precio justo."/>
+      <MoreProducts products={recommendedProducts} title="Productos recomendados" />
     </div>
   );
 }
@@ -362,6 +364,37 @@ function DescriptionLarge(props) {
     </div>
   );
 }
+
+const RECOMMENDED_PRODUCTS_QUERY_INDEX = `#graphql
+  fragment RecommendedProduct on Product {
+    id
+    title
+    handle
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
+    images(first: 2) {
+      nodes {
+        id
+        url
+        altText
+        width
+        height
+      }
+    }
+  }
+  query RecommendedProducts ($country: CountryCode, $language: LanguageCode)
+    @inContext(country: $country, language: $language) {
+    products(first: 8, sortKey: UPDATED_AT, reverse: true) {
+      nodes {
+        ...RecommendedProduct
+      }
+    }
+  }
+`;
 
 const PRODUCT_VARIANT_FRAGMENT = `#graphql
   fragment ProductVariant on ProductVariant {

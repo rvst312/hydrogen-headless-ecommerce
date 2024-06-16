@@ -21,12 +21,12 @@ const styles = {
     right: '20px',
     backgroundColor: '#25D366',
     color: 'white',
-    padding: '15px',
+    padding: '12px',
     border: 'none',
     borderRadius: '50%',
     cursor: 'pointer',
-    boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)',
-    zIndex: 1000,
+    boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.3)',
+    zIndex: 1,
   },
 };
 

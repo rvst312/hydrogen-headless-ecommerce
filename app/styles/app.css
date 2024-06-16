@@ -295,9 +295,11 @@ aside li {
   gap: 10px;
 }
 .cart-summary-aside .total dl > dd {
-  margin-top: 6px;
   font-weight: 800;
   color: var(--color-red);
+}
+.cart-summary-aside .total dl > dd div {
+  font-size: 1rem;
 }
 .cart-summary-aside .input-discount {
   width: 100px;
@@ -564,6 +566,9 @@ section .section-wrapper .card-wrapper .right img:hover {
 .recommended-products {
   margin-top: var(--margin-section-desk);
   margin-bottom: var(--margin-section-desk);
+}
+.recommended-products h3 {
+  padding-inline: 3rem;
 }
 .recommended-products .calltoaction {
   overflow: visible;
