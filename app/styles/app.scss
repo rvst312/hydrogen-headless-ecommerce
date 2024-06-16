@@ -313,9 +313,12 @@ aside li {
         gap: 10px;
 
         dl > dd{
-            margin-top: 6px;
             font-weight: 800;
             color: var(--color-red);
+
+            div{
+                font-size: 1rem;
+            }
         }
     }
 
@@ -616,6 +619,10 @@ section {
 .recommended-products {
     margin-top: var(--margin-section-desk);
     margin-bottom: var(--margin-section-desk);
+
+    h3{
+        padding-inline: 3rem;
+    }
 
     .calltoaction {
         overflow: visible;

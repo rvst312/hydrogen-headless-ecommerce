@@ -5,6 +5,7 @@ import { HeroHome, CardsCategory } from '../components/HeroHome';
 import RecommendedProducts from '../components/RecomendedProducts';
 import RecomProdByCollection from '../components/RecomendedProductsByCollection';
 import { EyeIcon, TruckIcon, LightIcon, TickIcon } from '../components/icons/icon'
+import WhatsAppButton from '~/components/WhatsappFloatIcon';
 
 /**
  * @type {MetaFunction}
@@ -45,6 +46,7 @@ export default function Homepage() {
       <RecomProdByCollection products={data.productWithCollection} textBar="INDOOR CBD" />
       <GarantyIcons />
       <CallToIg />
+      <WhatsAppButton phoneNumber="+34611674140" message="Hola" />
     </div>
   );
 }
