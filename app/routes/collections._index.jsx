@@ -20,6 +20,8 @@ export async function loader({ context, request }) {
 export default function Collections() {
   /** @type {LoaderReturnData} */
   const { collections } = useLoaderData();
+  /* Test log */
+  console.log(collections)
 
   return (
     <div className="collections">
@@ -30,11 +32,11 @@ export default function Collections() {
         {({ nodes, isLoading, PreviousLink, NextLink }) => (
           <div>
             <PreviousLink>
-              {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
+              {isLoading ? 'Cargando...' : <span>↑ Cargar Anterior</span>}
             </PreviousLink>
             <CollectionsGrid collections={nodes} />
             <NextLink>
-              {isLoading ? 'Loading...' : <span>Load more ↓</span>}
+              {isLoading ? 'Cargando...' : <span>Cargar Más ↓</span>}
             </NextLink>
           </div>
         )}

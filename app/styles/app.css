@@ -809,7 +809,7 @@ section .section-wrapper .card-wrapper .right img:hover {
   align-items: center;
   justify-content: space-around;
   padding: 3rem;
-  gap: 50px;
+  gap: 30px;
 }
 .product-wrapper .description-large-wrapper .left {
   display: flex;
