@@ -40,6 +40,7 @@ export default function Homepage() {
 
   return (
     <div className="home">
+      <Infobar />
       <HeroHome />
       <CardsCategory />
       <RecommendedProducts products={data.recommendedProducts} textBar="FLORES CBD" />
@@ -49,6 +50,24 @@ export default function Homepage() {
       <WhatsAppButton phoneNumber="+34611674140" message="Hola" />
     </div>
   );
+}
+
+export function Infobar() {
+
+  const styles = {
+    infoShipping: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center', 
+      padding: '10px'
+    }
+  }
+  
+  return (
+    <div style={styles.infoShipping}>
+      <span>Envio gratis a partir de 50€ 🚀</span>
+    </div >
+  )
 }
 
 export function GarantyIcons() {

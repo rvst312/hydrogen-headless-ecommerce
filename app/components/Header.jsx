@@ -41,27 +41,8 @@ export function Header({ header, cart }) {
           <HeaderCtas cart={cart} />
         </div>
       </header>
-      <Infobar />
     </>
   );
-}
-
-export function Infobar() {
-
-  const styles = {
-    infoShipping: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center', 
-      padding: '10px'
-    }
-  }
-  
-  return (
-    <div style={styles.infoShipping}>
-      <span>Envio gratis a partir de 50€ 🚀</span>
-    </div >
-  )
 }
 
 /**
